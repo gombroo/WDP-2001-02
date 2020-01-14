@@ -1,13 +1,46 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+//color variables *ONLY TO BE USED IN THIS FILE*
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$color-orange: #d58e32;
 
-$primary: #d58e32;
+$color-midGray-light: #434343;
+$color-midGray: #363636;
+$color-midGray-dark: #292929;
 
-$text-color: #2a2a2a;
+$color-gray: #b6b6b6;
+$color-black: #2a2a2a;
+$color-white: #fff;
 
-$form-border-color: #292929;
+$color-greyWhite: #e2e2e2;
+$color-grayWhite-darker: #f4f5f7;
+
+$color-gray-rgb-169: rgb(169, 169, 169);
+$color-gray-rgb-216: rgb(216, 216, 216);
+$color-gray-rgb-224: rgb(224, 227, 237);
+
+//component color variables
+
+$primary: $color-orange;
+
+$text-color: $color-black;
+$light-text-color: $color-white;
+$gray-text-color: $color-gray-rgb-169;
+$light-gray-text-color: $color-gray-rgb-224;
+
+$form-border-color: $color-midGray-dark;
+$light-border-color: $color-greyWhite;
+$gray-border-color: $color-gray;
+$dark-border-color: $color-black;
+
+$light-bg: $color-white;
+$gray-white-bg: $color-grayWhite-darker;
+$dark-bg: $color-midGray-dark;
+
+$header-topbar-bg: $color-midGray-light;
+$header-bg: $color-midGray;
+
+$footer-claim-bg: $color-black;
+$footer-bg: $color-midGray;
+
+$button-bg: $color-black;
