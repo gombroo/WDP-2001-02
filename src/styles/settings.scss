@@ -10,6 +10,7 @@ $color-midGray-dark: #292929;
 
 $color-gray: #b6b6b6;
 $color-black: #2a2a2a;
+$color-shadow: rgba(1, 2, 2, 0.2);
 $color-white: #fff;
 
 $color-greyWhite: #e2e2e2;
@@ -42,5 +43,7 @@ $header-bg: $color-midGray;
 
 $footer-claim-bg: $color-black;
 $footer-bg: $color-midGray;
+
+$menu-shadow: $color-shadow;
 
 $button-bg: $color-black;
