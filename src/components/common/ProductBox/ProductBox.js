@@ -14,7 +14,7 @@ import Button from '../Button/Button';
 const ProductBox = ({ name, price, promo, stars }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
-      {promo && <div className={styles.sale}>{promo}</div>}
+      {promo && <div className={styles.sale}>{promo.name}</div>}
       <div className={styles.buttons}>
         <Button variant='small'>Quick View</Button>
         <Button variant='small'>
@@ -47,9 +47,9 @@ const ProductBox = ({ name, price, promo, stars }) => (
         </Button>
       </div>
       <div className={styles.price}>
-        {promo && <div className={styles.promoPrice}>$ {1.2 * price}</div>}
+        {promo && <div className={styles.promoPrice}>$ {price}</div>}
         <Button noHover variant='small'>
-          $ {price}
+          $ {promo ? Math.round(price * (1 - promo.discount * 0.01)) : price}
         </Button>
       </div>
     </div>

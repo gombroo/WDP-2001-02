@@ -13,7 +13,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -22,7 +22,6 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -31,7 +30,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 15 },
       newFurniture: true,
     },
     {
@@ -40,7 +39,6 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -49,7 +47,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 10 },
       newFurniture: true,
     },
     {
@@ -58,7 +56,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 10 },
       newFurniture: true,
     },
     {
@@ -67,7 +65,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -76,7 +74,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -85,7 +83,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -94,7 +92,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -103,7 +101,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -112,7 +110,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -121,7 +119,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -130,7 +128,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -139,7 +137,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -148,7 +146,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -157,7 +155,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -166,7 +164,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -175,7 +173,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -184,7 +182,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -193,7 +191,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -202,7 +200,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -211,7 +209,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
     {
@@ -220,7 +218,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: 'sale',
+      promo: { name: 'sale', discount: 25 },
       newFurniture: true,
     },
   ],
