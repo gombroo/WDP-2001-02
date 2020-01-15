@@ -38,4 +38,9 @@
     background-color: $button-bg;
     color: $light-text-color;
   }
+
+  &.active {
+    background-color: $primary;
+    color: $light-text-color;
+  }
 }
