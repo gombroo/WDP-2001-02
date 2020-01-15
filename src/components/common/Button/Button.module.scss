@@ -34,10 +34,13 @@
   font-size: 13px;
   line-height: 22px;
 
-  &:not(.noHover):hover,
-  &.active {
+  &:not(.noHover):hover {
     background-color: $button-bg;
     color: $light-text-color;
-    outline: 1px solid $light-border-color;
+  }
+
+  &.active {
+    background-color: $primary;
+    color: $light-text-color;
   }
 }
