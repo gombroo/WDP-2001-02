@@ -56,12 +56,24 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
   &.active {
+    .iconWrapper {
+      color: $light-text-color;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+
+  &:hover {
     .iconWrapper {
       color: $light-text-color;
 
