@@ -4,6 +4,13 @@
   background-color: $light-bg;
   border: 1px solid $light-border-color;
   margin-bottom: 2rem;
+  &:hover {
+    background: $color-gray-rgb-216;
+    .photo {
+      background-color: $color-gray-rgb-216;
+      padding: 66.5% 10px 0 10px;
+    }
+  }
 
   .photo {
     position: relative;
@@ -14,6 +21,7 @@
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -29,7 +37,7 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
   }
@@ -99,3 +107,10 @@
     }
   }
 }
+
+.root:hover .buttons {
+  display: flex;
+}
+
+
+
