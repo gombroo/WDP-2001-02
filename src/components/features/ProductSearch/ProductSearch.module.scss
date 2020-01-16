@@ -33,6 +33,10 @@
       position: relative;
       z-index: 1;
     }
+
+    option:hover {
+      background-color: $color-orange;
+    }
   }
 
   .searchField {
