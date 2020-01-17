@@ -40,3 +40,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .root {
+    ul li {
+      line-height: 45px;
+    }
+
+    .topOptions ul li {
+      margin-right: 1rem;
+    }
+
+    .topMenu {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
