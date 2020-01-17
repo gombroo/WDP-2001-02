@@ -3,7 +3,7 @@ import ProductBox from './ProductBox';
 import { getProductById, toggleFavs } from '../../../redux/productsRedux';
 
 const mapStateToProps = (state, props) => {
-  const product = getProductById(state, props.bob);
+  const product = getProductById(state, props.productId);
   return {
     ...product,
   };
