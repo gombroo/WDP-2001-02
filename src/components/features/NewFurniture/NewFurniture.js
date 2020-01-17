@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 class NewFurniture extends React.Component {
   state = {
@@ -72,6 +74,24 @@ class NewFurniture extends React.Component {
                 <ProductBox {...item} />
               </div>
             ))}
+          </div>
+          <div className={styles.compare_box}>
+            <div className={styles.compare_list}>
+              <div className={styles.compare_list_left}>
+                <p>Added for comparison:</p>
+                <div className={styles.compare_item}>
+                  <img
+                    src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+                    width='40'
+                    height='40'
+                  ></img>
+                  <Link className={styles.mobile_close}></Link>
+                </div>
+              </div>
+              <div className={styles.compare_list_right}>
+                <Button variant='small'>Compare</Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
