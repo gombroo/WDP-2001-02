@@ -20,6 +20,7 @@ const ProductBox = ({
   compare,
   id,
   toggleFavs,
+  photo,
 }) => {
   const handleFavs = (id, e) => {
     e.preventDefault();
@@ -28,6 +29,8 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
+        <img src={photo} alt='' />
+
         {promo && <div className={styles.sale}>{promo.name}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -81,6 +84,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   id: PropTypes.string,
   toggleFavs: PropTypes.func,
+  photo: PropTypes.string,
 };
 
 export default ProductBox;
