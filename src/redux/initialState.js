@@ -17,6 +17,8 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       compare: true,
+      photo:
+        'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -26,6 +28,8 @@ const initialState = {
       stars: 2,
       newFurniture: true,
       favorite: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -36,6 +40,8 @@ const initialState = {
       promo: { name: 'sale', discount: 15 },
       newFurniture: true,
       compare: true,
+      photo:
+        'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -44,6 +50,8 @@ const initialState = {
       price: 30,
       stars: 2,
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -53,6 +61,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 10 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -62,6 +72,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 10 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -71,6 +83,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -80,6 +94,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -89,6 +105,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -98,6 +116,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -107,6 +127,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -116,6 +138,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -125,6 +149,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -134,6 +160,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -143,6 +171,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -152,6 +182,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960',
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -161,6 +193,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -170,6 +204,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -179,6 +215,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -188,6 +226,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -197,6 +237,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -206,6 +248,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -215,6 +259,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -224,6 +270,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
   cart: {
