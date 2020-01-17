@@ -84,6 +84,7 @@ class NewFurniture extends React.Component {
                     src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
                     width='40'
                     height='40'
+                    alt='sofa'
                   ></img>
                   <Link className={styles.mobile_close}></Link>
                 </div>
