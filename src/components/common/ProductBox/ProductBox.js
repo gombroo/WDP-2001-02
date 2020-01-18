@@ -11,7 +11,8 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount }) => {
+
+const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount, photo }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
       !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
@@ -21,6 +22,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount }) =
   return (
     <div className={styles.root} id='fade'>
       <div className={styles.photo}>
+        <img src={photo} alt='' />
         {promo && <div className={styles.sale}>{promo.name}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -73,6 +75,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  photo: PropTypes.string,
 };
 
 export default ProductBox;
