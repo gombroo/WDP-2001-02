@@ -5,14 +5,11 @@ import styles from './Homepage.module.scss';
 
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
-import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
-    <Swipeable>
-      <NewFurniture />
-    </Swipeable>
+    <NewFurniture />
   </div>
 );
 
