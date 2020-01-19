@@ -49,3 +49,27 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: 130px;
+
+      .menu {
+        order: -1;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: 130px;
+
+      .menu {
+        display: none;
+      }
+    }
+  }
+}

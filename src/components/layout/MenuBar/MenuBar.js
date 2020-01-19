@@ -9,9 +9,10 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className='col'>
+        <div className='col '>
           <ProductSearch />
         </div>
+
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
