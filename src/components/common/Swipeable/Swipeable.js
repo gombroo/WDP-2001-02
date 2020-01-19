@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Swipe } from 'react-swipe-component';
 
 const Swipeable = ({ children, leftAction, rightAction }) => {
-  return <React.Fragment>{children}</React.Fragment>;
+  return (
+    <Swipe
+      nodeName='div'
+      className='col-3'
+      onSwipedLeft={this.onSwipeLeftListener}
+      onSwipedRight={this.onSwipeRightListener}
+    >
+      {children}
+    </Swipe>
+  );
 };
 
 Swipeable.propTypes = {
