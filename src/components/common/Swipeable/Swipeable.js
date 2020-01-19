@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Swipe } from 'react-swipe-component';
 
-const Swipeable = ({ children, swipeAction, activePage, pagesCount }) => {
+const Swipeable = ({ children, swipeAction, activeItem, itemsCount }) => {
   const onSwipedRight = () => {
-    if (activePage - 1 >= 0) {
-      swipeAction(activePage - 1);
+    if (activeItem - 1 >= 0) {
+      swipeAction(activeItem - 1);
     }
   };
 
   const onSwipedLeft = () => {
-    if (activePage + 1 < pagesCount) {
-      swipeAction(activePage + 1);
+    if (activeItem + 1 < itemsCount) {
+      swipeAction(activeItem + 1);
     }
   };
 
@@ -30,8 +30,8 @@ const Swipeable = ({ children, swipeAction, activePage, pagesCount }) => {
 Swipeable.propTypes = {
   children: PropTypes.node,
   swipeAction: PropTypes.func,
-  activePage: PropTypes.number,
-  pagesCount: PropTypes.number,
+  activeItem: PropTypes.number,
+  itemsCount: PropTypes.number,
 };
 
 export default Swipeable;

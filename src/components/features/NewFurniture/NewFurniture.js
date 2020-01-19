@@ -68,8 +68,8 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <Swipeable
-            pagesCount={pagesCount}
-            activePage={this.state.activePage}
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
             swipeAction={this.handlePageChange.bind(this)}
           >
             <div className='row'>
