@@ -16,7 +16,12 @@ const Swipeable = ({ children, swipeAction, activePage, pagesCount }) => {
   };
 
   return (
-    <Swipe nodeName='div' onSwipedLeft={onSwipedLeft} onSwipedRight={onSwipedRight}>
+    <Swipe
+      nodeName='div'
+      detectTouch='true'
+      onSwipedLeft={onSwipedLeft}
+      onSwipedRight={onSwipedRight}
+    >
       {children}
     </Swipe>
   );
