@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
@@ -20,17 +20,24 @@ const ProductBox = ({
   compare,
   id,
   toggleFavs,
+  unmount,
   photo,
 }) => {
+  useEffect(() => {
+    document.querySelectorAll('#fade').forEach(item => {
+      !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
+    });
+  }, [unmount]);
+
   const handleFavs = (id, e) => {
     e.preventDefault();
     toggleFavs(id);
   };
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} id='fade'>
       <div className={styles.photo}>
         <img src={photo} alt='' />
-
         {promo && <div className={styles.sale}>{promo.name}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -75,6 +82,7 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
+  unmount: PropTypes.bool,
   compare: PropTypes.bool,
   favorite: PropTypes.bool,
   children: PropTypes.node,

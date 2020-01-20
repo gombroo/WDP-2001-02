@@ -4,6 +4,8 @@
   background-color: $light-bg;
   border: 1px solid $light-border-color;
   margin-bottom: 2rem;
+  opacity: 0;
+  transition: all 2s;
 
   .photo {
     position: relative;
@@ -105,4 +107,32 @@
       top:45%;
     }
   }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+  opacity: 0;
 }
