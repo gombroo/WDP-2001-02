@@ -40,7 +40,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
-    const compareProducts = products.filter(product => product.compare);
+    const comparedProducts = products.filter(product => product.compare);
     const handleCompare = (id, e) => {
       e.preventDefault();
       toggleCompare(id);
@@ -94,12 +94,12 @@ class NewFurniture extends React.Component {
               </div>
             ))}
           </div>
-          {compareProducts.length >= 1 && (
+          {comparedProducts.length >= 1 && (
             <div className={styles.compare_box}>
               <div className={styles.compare_list}>
                 <div className={styles.compare_list_left}>
                   <p>Added for comparison:</p>
-                  {compareProducts.map(product => (
+                  {comparedProducts.map(product => (
                     <div className={styles.compare_item} key={product.id}>
                       <img
                         src={product.photo}
