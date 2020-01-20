@@ -59,3 +59,37 @@
     }
   }
 }
+
+
+@media (max-width: 992px) {
+  .root {
+    display: flex;
+
+    .category {
+      flex-grow: 1!important;
+    }
+
+    .searchField {
+      flex-grow: 1!important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    display: flex;
+
+    .category {
+      display: none;
+    }
+
+    .searchField {
+      flex-grow: 1!important;
+      justify-content: space-between;
+    }
+
+    .menuMobile {
+      flex-grow: 1!important;
+    }
+  }
+}

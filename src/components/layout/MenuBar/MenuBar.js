@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './MenuBar.module.scss';
 
 const MenuBar = ({ children }) => (
@@ -11,6 +14,10 @@ const MenuBar = ({ children }) => (
       <div className='row align-items-center'>
         <div className='col '>
           <ProductSearch />
+        </div>
+
+        <div className={'col ' + styles.hamburger}>
+          <FontAwesomeIcon className={styles.icon} icon={faBars} />
         </div>
 
         <div className={'col-auto ' + styles.menu}>
