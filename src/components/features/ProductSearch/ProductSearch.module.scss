@@ -48,7 +48,7 @@
     .option {
       position: absolute;
       display: none;
-      background-color: white;
+      background-color: $color-white;
       width: 75%;
       padding-left: 15px;
 
@@ -82,13 +82,3 @@
     }
   }
 }
-/*
-<select name='' id=''>
-<option value=''>Select a category</option>
-<option value='furniture'>FURNITURE</option>
-<option value='chair'>CHAIR</option>
-<option value='table'>TABLE</option>
-<option value='sofa'>SOFA</option>
-<option value='bed'>BED</option>
-</select>
-*/
