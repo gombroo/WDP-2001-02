@@ -4,12 +4,14 @@ import {
   getProductById,
   toggleFavs,
   toggleCompare,
+  getCompared,
 } from '../../../redux/productsRedux';
 
 const mapStateToProps = (state, props) => {
   const product = getProductById(state, props.productId);
   return {
     ...product,
+    comparedItems: getCompared(state),
   };
 };
 

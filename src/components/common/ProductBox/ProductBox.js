@@ -23,6 +23,7 @@ const ProductBox = ({
   photo,
   toggleFavs,
   toggleCompare,
+  comparedItems,
 }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
@@ -37,7 +38,13 @@ const ProductBox = ({
 
   const handleCompare = (id, e) => {
     e.preventDefault();
-    toggleCompare(id);
+    if (comparedItems.length < 4) {
+      toggleCompare(id);
+    } else {
+      if (compare) {
+        toggleCompare(id);
+      }
+    }
   };
 
   return (
@@ -104,6 +111,7 @@ ProductBox.propTypes = {
   toggleFavs: PropTypes.func,
   toggleCompare: PropTypes.func,
   photo: PropTypes.string,
+  comparedItems: PropTypes.array,
 };
 
 export default ProductBox;
