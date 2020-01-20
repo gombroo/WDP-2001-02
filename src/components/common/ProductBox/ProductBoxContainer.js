@@ -10,7 +10,6 @@ const mapStateToProps = (state, props) => {
   const product = getProductById(state, props.productId);
   return {
     ...product,
-    product,
   };
 };
 

@@ -34,13 +34,17 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, toggleCompare } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
     const compareProducts = products.filter(product => product.compare);
+    const handleCompare = (id, e) => {
+      e.preventDefault();
+      toggleCompare(id);
+    };
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -103,7 +107,10 @@ class NewFurniture extends React.Component {
                         height='40'
                         alt={product.category}
                       ></img>
-                      <Link className={styles.mobile_close}></Link>
+                      <Link
+                        className={styles.mobile_close}
+                        onClick={e => handleCompare(product.id, e)}
+                      ></Link>
                     </div>
                   ))}
                 </div>
@@ -138,6 +145,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  toggleCompare: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {
