@@ -40,6 +40,8 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
+    const compareProducts = products.filter(product => product.compare);
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -88,25 +90,29 @@ class NewFurniture extends React.Component {
               </div>
             ))}
           </div>
-          <div className={styles.compare_box}>
-            <div className={styles.compare_list}>
-              <div className={styles.compare_list_left}>
-                <p>Added for comparison:</p>
-                <div className={styles.compare_item}>
-                  <img
-                    src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
-                    width='40'
-                    height='40'
-                    alt='sofa'
-                  ></img>
-                  <Link className={styles.mobile_close}></Link>
+          {compareProducts.length >= 1 && (
+            <div className={styles.compare_box}>
+              <div className={styles.compare_list}>
+                <div className={styles.compare_list_left}>
+                  <p>Added for comparison:</p>
+                  {compareProducts.map(product => (
+                    <div className={styles.compare_item} key={product.id}>
+                      <img
+                        src={product.photo}
+                        width='40'
+                        height='40'
+                        alt={product.category}
+                      ></img>
+                      <Link className={styles.mobile_close}></Link>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.compare_list_right}>
+                  <Button variant='small'>Compare</Button>
                 </div>
               </div>
-              <div className={styles.compare_list_right}>
-                <Button variant='small'>Compare</Button>
-              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     );

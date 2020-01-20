@@ -19,9 +19,10 @@ const ProductBox = ({
   favorite,
   compare,
   id,
-  toggleFavs,
   unmount,
   photo,
+  toggleFavs,
+  toggleCompare,
 }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
@@ -32,6 +33,11 @@ const ProductBox = ({
   const handleFavs = (id, e) => {
     e.preventDefault();
     toggleFavs(id);
+  };
+
+  const handleCompare = (id, e) => {
+    e.preventDefault();
+    toggleCompare(id);
   };
 
   return (
@@ -66,7 +72,11 @@ const ProductBox = ({
           <Button variant='outline' active={favorite} onClick={e => handleFavs(id, e)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' active={compare}>
+          <Button
+            variant='outline'
+            active={compare}
+            onClick={e => handleCompare(id, e)}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -92,6 +102,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   id: PropTypes.string,
   toggleFavs: PropTypes.func,
+  toggleCompare: PropTypes.func,
   photo: PropTypes.string,
 };
 
