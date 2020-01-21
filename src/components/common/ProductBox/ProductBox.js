@@ -29,7 +29,7 @@ const ProductBox = ({
     });
   }, [unmount]);
 
-  const handleFavs = (id, e) => {
+  const handleFavs = (e, id) => {
     e.preventDefault();
     toggleFavs(id);
   };
@@ -63,7 +63,7 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' active={favorite} onClick={e => handleFavs(id, e)}>
+          <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' active={compare}>
