@@ -10,15 +10,15 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    unmount: false,
+    isUnmounted: false,
   };
 
   unmountTrue() {
-    this.setState({ unmount: true });
+    this.setState({ isUnmounted: true });
   }
 
   unmountFalse() {
-    setTimeout(() => this.setState({ unmount: false }), 1000);
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
   }
 
   handlePageChange = newPage => {
@@ -92,7 +92,7 @@ class NewFurniture extends React.Component {
                 .slice(activePage * pageItems, (activePage + 1) * pageItems)
                 .map(item => (
                   <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
+                    <ProductBox {...item} isUnmounted={this.state.isUnmounted} />
                   </div>
                 ))}
             </div>
