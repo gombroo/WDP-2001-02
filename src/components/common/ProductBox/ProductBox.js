@@ -18,6 +18,8 @@ const ProductBox = ({
   stars,
   favorite,
   compare,
+  id,
+  toggleFavs,
   unmount,
   photo,
 }) => {
@@ -26,6 +28,11 @@ const ProductBox = ({
       !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
     });
   }, [unmount]);
+
+  const handleFavs = (e, id) => {
+    e.preventDefault();
+    toggleFavs(id);
+  };
 
   return (
     <div className={styles.root} id='fade'>
@@ -56,7 +63,7 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' active={favorite}>
+          <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' active={compare}>
@@ -83,6 +90,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  id: PropTypes.string,
+  toggleFavs: PropTypes.func,
   photo: PropTypes.string,
 };
 
