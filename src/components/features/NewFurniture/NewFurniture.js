@@ -41,7 +41,7 @@ class NewFurniture extends React.Component {
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
     const comparedProducts = products.filter(product => product.compare);
-    const handleCompare = (id, e) => {
+    const handleCompare = (e, id) => {
       e.preventDefault();
       toggleCompare(id);
     };
@@ -109,7 +109,7 @@ class NewFurniture extends React.Component {
                       ></img>
                       <Link
                         className={styles.mobile_close}
-                        onClick={e => handleCompare(product.id, e)}
+                        onClick={e => handleCompare(e, product.id)}
                       ></Link>
                     </div>
                   ))}
