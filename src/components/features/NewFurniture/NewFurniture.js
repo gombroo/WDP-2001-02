@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
+
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
