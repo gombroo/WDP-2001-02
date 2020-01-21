@@ -55,6 +55,7 @@
   .root {
     :global(.container) > :global(.row) {
       height: 130px;
+
       .menu {
         order: -1;
       }
@@ -62,49 +63,27 @@
   }
 }
 
-
-/* hide hamburger  */
-@media only screen and (min-width: 768px) {
+/* hide menu and show hamburger from 768 px*/
+@media (max-width: 768px) {
   .root {
-    .hamburger {
-      display: none;
-    }
-  }
-}
-
-/* hide menu and show hamburger from 992 px*/
-@media (max-width: 992px) {
-  .root {
-    :global(.container) > :global(.row) {
-      height: 80px;
-
-    .menu ul  {
+    .menu {
       display: none;
     }
 
     .hamburger {
-      display: inline-block;
+      display: block;
+      flex-grow: 0;
 
       &:hover {
-        .menu ul li {
+        .menu ul {
           display: block;
         }
       }
-    }
-      .hamburger {
-        display: inline-flex;
-        text-align: right;
-
-        .icon {
-          font-size: 2rem;
-          color: $gray-border-color;
-
-          // &:hover {
-          //   .menu ul li {
-          //     display: block;
-          //   }
-          // }
-        }
+      .bar {
+        width: 35px;
+        height: 5px;
+        background-color: $gray-border-color;
+        margin: 6px 0;
       }
     }
   }
