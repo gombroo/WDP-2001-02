@@ -33,11 +33,12 @@ class NewFurniture extends React.Component {
   }
 
   render() {
+    const pageItems = 8;
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / pageItems);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -87,7 +88,7 @@ class NewFurniture extends React.Component {
           >
             <div className='row'>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * pageItems, (activePage + 1) * pageItems)
                 .map(item => (
                   <div key={item.id} className='col-3'>
                     <ProductBox {...item} />
