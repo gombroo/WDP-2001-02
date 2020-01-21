@@ -31,12 +31,12 @@ const ProductBox = ({
     });
   }, [unmount]);
 
-  const handleFavs = (id, e) => {
+  const handleFavs = (e, id) => {
     e.preventDefault();
     toggleFavs(id);
   };
 
-  const handleCompare = (id, e) => {
+  const handleCompare = (e, id) => {
     e.preventDefault();
     if (comparedItems.length < 4) {
       toggleCompare(id);
@@ -76,13 +76,13 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' active={favorite} onClick={e => handleFavs(id, e)}>
+          <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
             active={compare}
-            onClick={e => handleCompare(id, e)}
+            onClick={e => handleCompare(e, id)}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
