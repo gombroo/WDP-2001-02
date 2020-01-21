@@ -5,20 +5,20 @@
   border: 1px solid $light-border-color;
   margin-bottom: 2rem;
   &:hover {
-    background: $color-gray-rgb-216;
     .photo {
-      background-color: $color-gray-rgb-216;
+      .sale {
+      background-color: $primary;
+      }
       .buttons {
         opacity: 1;
       }
     }
     .price {
-      .btn-main-small {
-        background-color: $color-gray-rgb-216;
+      .btn-small {
+        background-color: $primary;
       }
     }
   }
-
 
   .photo {
     position: relative;
