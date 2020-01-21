@@ -20,11 +20,11 @@ class NewFurniture extends React.Component {
     setTimeout(() => this.setState({ unmount: false }), 1000);
   }
 
-  handlePageChange(newPage) {
+  handlePageChange = newPage => {
     this.unmountTrue();
     setTimeout(() => this.setState({ activePage: newPage }), 1100);
     this.unmountFalse();
-  }
+  };
 
   handleCategoryChange(newCategory) {
     this.unmountTrue();
@@ -83,7 +83,7 @@ class NewFurniture extends React.Component {
           <Swipeable
             itemsCount={pagesCount}
             activeItem={this.state.activePage}
-            swipeAction={this.handlePageChange.bind(this)}
+            swipeAction={this.handlePageChange}
           >
             <div className='row'>
               {categoryProducts
