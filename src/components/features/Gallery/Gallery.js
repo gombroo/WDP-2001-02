@@ -28,13 +28,17 @@ export class Gallery extends React.Component {
                   className={'img-fluid'}
                   alt={''}
                 />
-                <h3>FURNITURE GALLERY</h3>
-                <ul className={styles.submenu}>
-                  <li>FEATURED</li>
-                  <li>TOP SELLER</li>
-                  <li>SALE OFF</li>
-                  <li>TOP RATED</li>
-                </ul>
+                <div className={styles.heading}>
+                  <h3>furniture gallery</h3>
+                </div>
+                <div className={styles.submenu}>
+                  <ul>
+                    <li>FEATURED</li>
+                    <li>TOP SELLER</li>
+                    <li>SALE OFF</li>
+                    <li>TOP RATED</li>
+                  </ul>
+                </div>
                 <ul className={styles.buttons}>
                   <li>
                     <Button
@@ -112,6 +116,11 @@ export class Gallery extends React.Component {
                   className={'img-fluid'}
                   alt={''}
                 />
+                <div className={styles.promoOffer}>
+                  <div></div>
+                  <span></span>
+                  <button></button>
+                </div>
               </div>
             </div>
           </div>
