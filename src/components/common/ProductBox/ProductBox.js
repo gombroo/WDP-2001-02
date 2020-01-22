@@ -17,15 +17,17 @@ const ProductBox = ({
   compare,
   id,
   toggleFavs,
-  unmount,
+  isUnmounted,
   photo,
   rating,
 }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
-      !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
+      !isUnmounted
+        ? item.classList.add(styles.fadeIn)
+        : item.classList.add(styles.fadeOut);
     });
-  }, [unmount]);
+  }, [isUnmounted]);
 
   const handleFavs = (e, id) => {
     e.preventDefault();
@@ -70,7 +72,7 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
-  unmount: PropTypes.bool,
+  isUnmounted: PropTypes.bool,
   compare: PropTypes.bool,
   favorite: PropTypes.bool,
   children: PropTypes.node,
