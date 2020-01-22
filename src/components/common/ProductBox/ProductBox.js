@@ -76,7 +76,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
-  promo: PropTypes.string,
+  promo: PropTypes.object,
   stars: PropTypes.number,
   id: PropTypes.string,
   toggleFavs: PropTypes.func,

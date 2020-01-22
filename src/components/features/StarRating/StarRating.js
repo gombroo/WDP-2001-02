@@ -50,18 +50,17 @@ class StarRating extends React.Component {
     for (let i = 0; i < 5; i++) {
       let icon;
       let classy;
-      if (this.props.stars > i && this.props.stars != null) {
-        icon = faStar;
-        if (this.state.rating > i && this.state.rating != null) {
-          classy = styles.selected;
-        }
-      } else {
+      if (this.state.rating) {
         if (this.state.rating > i && this.state.rating != null) {
           classy = styles.selected;
           icon = faStar;
         } else {
           icon = farStar;
         }
+      } else {
+        this.props.stars > i && this.props.stars != null
+          ? (icon = faStar)
+          : (icon = farStar);
       }
 
       stars.push(
