@@ -6,7 +6,25 @@
   margin-bottom: 2rem;
   opacity: 0;
   transition: all 2s;
-
+  &:hover {
+    .photo {
+      .sale {
+      background-color: $primary;
+      }
+      .buttons {
+        opacity: 1;
+      }
+    }
+     .actions {
+      .price {
+        background-color: $primary;
+        .promoPrice {
+          color: $color-white;
+        }        
+      }
+    }
+  }
+ 
   .photo {
     position: relative;
     background: {
@@ -15,6 +33,7 @@
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -29,10 +48,10 @@
       padding: 30px 15px 5px 15px;
     } 
     
-
     .buttons {
       display: flex;
       justify-content: space-between;
+      opacity: 0;
     }
 
     img {
@@ -136,3 +155,4 @@
   animation: fadeOut 1s;
   opacity: 0;
 }
+
