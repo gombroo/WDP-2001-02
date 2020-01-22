@@ -11,7 +11,7 @@
     li {
       display: inline-block;
       line-height: 55px;
-      @extend%hover-transition;
+      @extend%hover-no-shake-transition;
 
       a {
         color: $light-text-color;
