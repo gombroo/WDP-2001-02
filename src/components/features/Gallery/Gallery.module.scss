@@ -12,6 +12,7 @@
       line-height: 38px;
       margin: 0;
       letter-spacing: 1px;
+      font-weight: 500;
     }
 
     &::after {
@@ -58,14 +59,15 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-    }
 
+
+    }
     li {
       border-top: 4px solid transparent;
       margin: 0 -15px;
-
       &:hover {
         border-top: 4px solid $primary;
+
       }
     }
   }
@@ -176,6 +178,52 @@
           text-decoration: none;
           color: $text-color;
         }
+      }
+    }
+  }
+
+  .boxRight {
+    position: relative;
+
+    &:before {
+      content: '';
+      float: left;
+      padding-top:100%;
+    }
+
+    img {
+      position: absolute;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .promoOffer {
+      padding: 40px 0 0 40px;
+
+      p {
+        font-weight: bold;
+
+        span {
+          margin-left: 15px;
+          color: $color-green;
+          font-size: 2.5rem;
+        }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: $primary;
+        font-weight: bold;
+        margin-bottom: 1em;
+      }
+
+      button {
+        height: 40px;
+        width: 120px;
+        color: $color-white;
+        background-color: $color-green;
+        border: none;
+        border-radius: 4px;
       }
     }
   }

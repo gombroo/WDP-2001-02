@@ -117,9 +117,11 @@ export class Gallery extends React.Component {
                   alt={''}
                 />
                 <div className={styles.promoOffer}>
-                  <div></div>
-                  <span></span>
-                  <button></button>
+                  <p>
+                    FROM<span>$50.80</span>
+                  </p>
+                  <h1>Bedroom Bed</h1>
+                  <button>SHOP NOW</button>
                 </div>
               </div>
             </div>
