@@ -16,6 +16,14 @@ class StarRating extends React.Component {
       isRating: false,
     };
   }
+  setRate(rating, e) {
+    e.preventDefault();
+    this.setState({
+      rating,
+      lastRating: rating,
+      isRating: true,
+    });
+  }
   starOver(rating, e) {
     this.setState({
       rating,
@@ -53,7 +61,7 @@ class StarRating extends React.Component {
           <FontAwesomeIcon
             icon={icon}
             className={classy}
-            onClick
+            onClick={this.setRate.bind(this, i + 1)}
             onMouseOver={this.starOver.bind(this, i + 1)}
             onMouseOut={this.starOut.bind(this)}
           >
