@@ -2,20 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    unmount: false,
   };
 
+  unmountTrue() {
+    this.setState({ unmount: true });
+  }
+
+  unmountFalse() {
+    setTimeout(() => this.setState({ unmount: false }), 1000);
+  }
+
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activePage: newPage }), 1100);
+    this.unmountFalse();
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activeCategory: newCategory }), 1100);
+    this.unmountFalse();
   }
 
   render() {
@@ -68,8 +81,8 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+              <div key={item.id} className='col-12 col-md-6 col-lg-4 col-xl-3'>
+                <ProductBox productId={item.id} unmount={this.state.unmount} />
               </div>
             ))}
           </div>

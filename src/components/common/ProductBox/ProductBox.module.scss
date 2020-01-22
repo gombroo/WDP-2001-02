@@ -4,6 +4,8 @@
   background-color: $light-bg;
   border: 1px solid $light-border-color;
   margin-bottom: 2rem;
+  opacity: 0;
+  transition: all 2s;
   &:hover {
     .photo {
       .sale {
@@ -13,16 +15,18 @@
         opacity: 1;
       }
     }
-    .price {
-      .btn-small {
+     .actions {
+      .price {
         background-color: $primary;
+        .promoPrice {
+          color: $color-white;
+        }        
       }
     }
   }
-
+ 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: $gray-white-bg;
       size: contain;
@@ -42,12 +46,19 @@
       border-radius: 50%;
       color: $light-text-color;
       padding: 30px 15px 5px 15px;
-    }
-
+    } 
+    
     .buttons {
       display: flex;
       justify-content: space-between;
       opacity: 0;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      
     }
   }
 
@@ -117,6 +128,31 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
+.fadeIn {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+  opacity: 0;
+}
 

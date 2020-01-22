@@ -15,6 +15,7 @@
       color: rgb(216, 216, 216);
       font-weight: 500;
 
+
       .icon {
         font-size: 32px;
         color: $primary;
@@ -30,6 +31,7 @@
       display: inline-block;
       position: relative;
       color: $light-text-color;
+      @extend%hover-transition;
 
       .cartIcon {
         background-color: $primary;
@@ -67,6 +69,22 @@
         .cartIcon {
           background-color: lighten($primary, 10%);
         }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: 140px;
+    }
+
+    .phoneNumber {
+      p {
+        font-size: 14px;
+        padding-top:5px;
       }
     }
   }
