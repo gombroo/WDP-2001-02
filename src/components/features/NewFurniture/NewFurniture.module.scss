@@ -100,4 +100,93 @@
       }
     }
   }
+
+  .compare_box {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+    //width: 100%;
+    width: 640px;
+    box-sizing: border-box;
+    height: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    //display: none;
+
+    &.is-visible {
+      display: block;
+    }
+
+    .compare_list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 10px 30px;
+
+      .compare_list_left {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .compare_item {
+        margin-left: 30px;
+        position: relative;
+        cursor: pointer;
+
+        &:last-of-type {
+          margin-right: 30px;
+        }
+
+        &:hover img {
+          opacity: 0.5
+        }
+
+        &:hover a {
+          display: block;
+        }
+
+        .mobile_close {
+          display: none;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 0;
+          left: 7px;
+
+          &:before {
+            position: absolute;
+            top: 20px;
+            right: 5px;
+            left: 5px;
+            height: 2px;
+            content: "";
+            background: #000;
+            border-radius: 1px;
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            position: absolute;
+            top: 20px;
+            right: 5px;
+            left: 5px;
+            height: 2px;
+            content: "";
+            background: #000;
+            border-radius: 1px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+
 }

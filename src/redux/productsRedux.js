@@ -2,6 +2,9 @@
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 
+export const getCompared = ({ products }) =>
+  products.filter(item => item.compare === true);
+
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
@@ -16,9 +19,11 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
 const TOGGLE_FAVS = createActionName('TOGGLE_FAVS');
+const TOGGLE_COMPARE = createActionName('TOGGLE_COMPARE');
 
 /* action creators */
 export const toggleFavs = payload => ({ payload, type: TOGGLE_FAVS });
+export const toggleCompare = payload => ({ payload, type: TOGGLE_COMPARE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -31,6 +36,16 @@ export default function reducer(statePart = [], action = {}) {
         return {
           ...product,
           favorite: !product.favorite,
+        };
+      });
+    case TOGGLE_COMPARE:
+      return statePart.map(product => {
+        if (product.id !== action.payload) {
+          return product;
+        }
+        return {
+          ...product,
+          compare: !product.compare,
         };
       });
     default:
