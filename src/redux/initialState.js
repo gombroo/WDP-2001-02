@@ -19,6 +19,7 @@ const initialState = {
       compare: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 4,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -30,6 +31,7 @@ const initialState = {
       favorite: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 3,
     },
     {
       id: 'aenean-ru-bristique-3',

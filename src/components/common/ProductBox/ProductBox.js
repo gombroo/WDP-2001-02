@@ -19,6 +19,7 @@ const ProductBox = ({
   toggleFavs,
   unmount,
   photo,
+  rating,
 }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
@@ -45,7 +46,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <StarRating productId={id} />
+        <StarRating productId={id} rating={rating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -80,6 +81,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   toggleFavs: PropTypes.func,
   photo: PropTypes.string,
+  rating: PropTypes.number,
 };
 
 export default ProductBox;
