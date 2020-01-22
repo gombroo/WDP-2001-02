@@ -11,13 +11,30 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-
-const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount, photo }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  favorite,
+  compare,
+  id,
+  toggleFavs,
+  isUnmounted,
+  photo,
+}) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
-      !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
+      !isUnmounted
+        ? item.classList.add(styles.fadeIn)
+        : item.classList.add(styles.fadeOut);
     });
-  }, [unmount]);
+  }, [isUnmounted]);
+
+  const handleFavs = (e, id) => {
+    e.preventDefault();
+    toggleFavs(id);
+  };
 
   return (
     <div className={styles.root} id='fade'>
@@ -48,7 +65,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount, pho
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' active={favorite}>
+          <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' active={compare}>
@@ -67,7 +84,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, compare, unmount, pho
 };
 
 ProductBox.propTypes = {
-  unmount: PropTypes.bool,
+  isUnmounted: PropTypes.bool,
   compare: PropTypes.bool,
   favorite: PropTypes.bool,
   children: PropTypes.node,
@@ -75,6 +92,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  id: PropTypes.string,
+  toggleFavs: PropTypes.func,
   photo: PropTypes.string,
 };
 
