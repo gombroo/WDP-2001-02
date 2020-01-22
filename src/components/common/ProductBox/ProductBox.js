@@ -19,7 +19,7 @@ const ProductBox = ({
   favorite,
   compare,
   id,
-  unmount,
+  isUnmounted,
   photo,
   toggleFavs,
   toggleCompare,
@@ -27,9 +27,11 @@ const ProductBox = ({
 }) => {
   useEffect(() => {
     document.querySelectorAll('#fade').forEach(item => {
-      !unmount ? item.classList.add(styles.fadeIn) : item.classList.add(styles.fadeOut);
+      !isUnmounted
+        ? item.classList.add(styles.fadeIn)
+        : item.classList.add(styles.fadeOut);
     });
-  }, [unmount]);
+  }, [isUnmounted]);
 
   const handleFavs = (e, id) => {
     e.preventDefault();
@@ -67,8 +69,8 @@ const ProductBox = ({
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
+                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                )}
             </a>
           ))}
         </div>
@@ -99,7 +101,7 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
-  unmount: PropTypes.bool,
+  isUnmounted: PropTypes.bool,
   compare: PropTypes.bool,
   favorite: PropTypes.bool,
   children: PropTypes.node,

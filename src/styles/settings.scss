@@ -91,3 +91,7 @@ $shake-duration-time: 1s;
     @extend%shake-animation;
   }
 }
+
+%hover-no-shake-transition {
+  transition:  color $txt-transition-time, background $bg-transition-time;
+}
