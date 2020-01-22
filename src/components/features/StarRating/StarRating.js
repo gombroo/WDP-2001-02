@@ -23,6 +23,7 @@ class StarRating extends React.Component {
       lastRating: rating,
       isRating: true,
     });
+    this.handleRating(rating);
   }
   starOver(rating, e) {
     this.setState({
@@ -36,6 +37,13 @@ class StarRating extends React.Component {
       rating: lastRating,
       isRating: false,
     });
+  }
+  handleRating(rating, id = this.props.productId) {
+    const payload = {
+      id,
+      rating,
+    };
+    this.props.addRating(payload);
   }
   render() {
     let stars = [];
@@ -77,6 +85,8 @@ class StarRating extends React.Component {
 StarRating.propTypes = {
   stars: PropTypes.number,
   rating: PropTypes.number,
+  productId: PropTypes.string,
+  addRating: PropTypes.func,
 };
 
 export default StarRating;

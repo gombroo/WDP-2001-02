@@ -6,7 +6,7 @@
     color: $text-color;
 
     & .selected {
-      color: red;
+      color: $primary;
     }
   }
 }

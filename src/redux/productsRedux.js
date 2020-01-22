@@ -16,9 +16,11 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
 const TOGGLE_FAVS = createActionName('TOGGLE_FAVS');
+const ADD_RATING = createActionName('ADD_RATING');
 
 /* action creators */
 export const toggleFavs = payload => ({ payload, type: TOGGLE_FAVS });
+export const addRating = payload => ({ payload, type: ADD_RATING });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -31,6 +33,16 @@ export default function reducer(statePart = [], action = {}) {
         return {
           ...product,
           favorite: !product.favorite,
+        };
+      });
+    case ADD_RATING:
+      return statePart.map(product => {
+        if (product.id !== action.payload.id) {
+          return product;
+        }
+        return {
+          ...product,
+          rating: action.payload.rating,
         };
       });
     default:

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StarRating from './StarRating';
-import { getProductById } from '../../../redux/productsRedux';
+import { getProductById, addRating } from '../../../redux/productsRedux';
 
 const mapStateToProps = (state, props) => {
   const product = getProductById(state, props.productId);
@@ -9,8 +9,8 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-/*const mapDispatchToProps = dispatch => ({
-  toggleFavs: id => dispatch(toggleFavs(id)),
-});*/
+const mapDispatchToProps = dispatch => ({
+  addRating: data => dispatch(addRating(data)),
+});
 
-export default connect(mapStateToProps)(StarRating);
+export default connect(mapStateToProps, mapDispatchToProps)(StarRating);
