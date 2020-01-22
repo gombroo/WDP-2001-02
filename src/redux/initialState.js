@@ -16,7 +16,6 @@ const initialState = {
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
       favorite: true,
-      compare: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       rating: 4,
@@ -41,7 +40,6 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 15 },
       newFurniture: true,
-      compare: true,
       photo:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
