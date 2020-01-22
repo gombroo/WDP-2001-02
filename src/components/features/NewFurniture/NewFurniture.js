@@ -2,28 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+
+import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    unmount: false,
+    isUnmounted: false,
   };
 
   unmountTrue() {
-    this.setState({ unmount: true });
+    this.setState({ isUnmounted: true });
   }
 
   unmountFalse() {
-    setTimeout(() => this.setState({ unmount: false }), 1000);
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
   }
 
-  handlePageChange(newPage) {
+  handlePageChange = newPage => {
     this.unmountTrue();
     setTimeout(() => this.setState({ activePage: newPage }), 1100);
     this.unmountFalse();
-  }
+  };
 
   handleCategoryChange(newCategory) {
     this.unmountTrue();
@@ -32,11 +34,12 @@ class NewFurniture extends React.Component {
   }
 
   render() {
+    const pageItems = 8;
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / pageItems);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -79,13 +82,21 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-12 col-md-6 col-lg-4 col-xl-3'>
-                <ProductBox productId={item.id} unmount={this.state.unmount} />
-              </div>
-            ))}
-          </div>
+          <Swipeable
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
+            swipeAction={this.handlePageChange}
+          >
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * pageItems, (activePage + 1) * pageItems)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} isUnmounted={this.state.isUnmounted} />
+                  </div>
+                ))}
+            </div>
+          </Swipeable>
         </div>
       </div>
     );
