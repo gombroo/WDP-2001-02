@@ -16,10 +16,11 @@ export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_VIEWPORT: {
       return {
-        ...statePart,
-        viewport: action.payload,
+        height: action.payload.height,
+        width: action.payload.width,
       };
     }
+
     default:
       return statePart;
   }
