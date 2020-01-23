@@ -31,6 +31,7 @@
       display: inline-block;
       position: relative;
       color: $light-text-color;
+      @extend%hover-transition;
 
       .cartIcon {
         background-color: $primary;

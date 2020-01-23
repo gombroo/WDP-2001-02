@@ -4,16 +4,36 @@
   background-color: $light-bg;
   border: 1px solid $light-border-color;
   margin-bottom: 2rem;
+  opacity: 0;
+  transition: all 2s;
+  &:hover {
+    .photo {
+      .sale {
+      background-color: $primary;
+      }
+      .buttons {
+        opacity: 1;
+      }
+    }
+     .actions {
+      .price {
+        background-color: $primary;
+        .promoPrice {
+          color: $color-white;
+        }
+      }
+    }
+  }
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: $gray-white-bg;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -31,6 +51,14 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      opacity: 0;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
     }
   }
 
@@ -43,13 +71,6 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
-    }
-
-    .stars {
-      a {
-        text-decoration: none;
-        color: $text-color;
-      }
     }
   }
 
@@ -99,3 +120,32 @@
     }
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+  opacity: 0;
+}
+

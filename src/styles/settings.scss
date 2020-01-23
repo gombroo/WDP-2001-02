@@ -47,3 +47,51 @@ $footer-bg: $color-midGray;
 $menu-shadow: $color-shadow;
 
 $button-bg: $color-black;
+
+//hover animation placeholders
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+$bg-transition-time: 0.25s;
+$txt-transition-time: 0.25s;
+$shake-duration-time: 1s;
+
+%shake-animation {
+  animation: shake $shake-duration-time cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+%hover-transition {
+  transition:  color $txt-transition-time, background $bg-transition-time;
+
+  &:not(.noHover):hover {
+    @extend%shake-animation;
+  }
+}
+
+%hover-no-shake-transition {
+  transition:  color $txt-transition-time, background $bg-transition-time;
+}
