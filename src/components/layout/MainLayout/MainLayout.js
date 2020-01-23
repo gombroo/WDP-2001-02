@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const MainLayout = ({ children }) => {
-  const size = useWindowSize();
+const MainLayout = ({ children, addViewport }) => {
+  useWindowSize(addViewport);
+
   return (
     <div>
-      {size.width}px / {size.height}px
       <Header />
       {children}
       <Footer />
@@ -18,9 +18,10 @@ const MainLayout = ({ children }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
+  addViewport: PropTypes.func,
 };
 
-const useWindowSize = () => {
+const useWindowSize = addViewport => {
   const isClient = typeof window === 'object';
 
   const getSize = useCallback(() => {
@@ -39,11 +40,12 @@ const useWindowSize = () => {
 
     const handleResize = () => {
       setWindowSize(getSize());
+      addViewport(getSize());
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isClient, getSize]);
+  }, [isClient, getSize, addViewport]);
 
   return windowSize;
 };
