@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './Feedback.module.scss';
 
@@ -28,6 +28,7 @@ class Feedback extends React.Component {
 
   render() {
     const { activePage } = this.state;
+    const { opinions } = this.props;
 
     const dots = [];
     for (let i = 0; i < 3; i++) {
@@ -59,13 +60,14 @@ class Feedback extends React.Component {
           <div className='row'>
             <div className={'col ' + styles.quote}>
               <FontAwesomeIcon icon={faQuoteRight} className={styles.quotes}> stars</FontAwesomeIcon>
-              <div className={styles.opinion}>Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, sem non dapibus aliquam, lectus mi auctor odio, ut ornare diam nibh eget arcu. Suspendisse facilisis nisl vitae velit finibus, sit amet congue purus euismod. </div>
+              <div className={styles.opinion}>{opinions[0].opinion}</div>
               <div className={styles.user}>
                 <div className={styles.user_image}>
-                  <img src="https://images.unsplash.com/photo-1491335404485-a45965d77414?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80"></img>
+                  <img src={opinions[0].image} alt={opinions[0].profession}></img>
                 </div>
                 <div className={styles.user_name}>
-                  John Smith
+                  <h4>{opinions[0].name}</h4>
+                  <p>{opinions[0].profession}</p>
                 </div>
               </div>
             </div>
@@ -75,5 +77,16 @@ class Feedback extends React.Component {
     );
   }
 }
+
+Feedback.propTypes = {
+  opinions: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      profession: PropTypes.string,
+      image: PropTypes.string,
+      opinion: PropTypes.string,
+    })
+  ),
+};
 
 export default Feedback;
