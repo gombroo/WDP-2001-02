@@ -9,11 +9,17 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const ADD_VIEWPORT = createActionName('ADD_VIEWPORT');
 
 /* action creators */
-export const addProduct = payload => ({ payload, type: ADD_VIEWPORT });
+export const addViewport = payload => ({ payload, type: ADD_VIEWPORT });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
+    case ADD_VIEWPORT: {
+      return {
+        ...statePart,
+        viewport: action.payload,
+      };
+    }
     default:
       return statePart;
   }
