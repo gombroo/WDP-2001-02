@@ -1,33 +1,43 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: 5rem 0;
+  padding: 3rem 0 5rem 0 ;
   text-transform: uppercase;
 
-  .box_one {
-    background-image: url('https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940;');
+  .box {
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .one {
+    background-image: url('https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940;');
     height: 100%;
-    padding: 2rem;
+    padding: 3rem;
     color: $color-white;
+    justify-content: flex-end;
 
     &::after {
       position: absolute;
       content: '';
-      background: #33d9b2;
-      width: 100%;
-      height: 100%;
-      left: 0px;
-      top: 0px;
+      background: $color-midGray-dark;
+      top: 30px;
+      left: 40px;
+      bottom:30px;
+      width: calc(100% - 80px);
       opacity: 0.3;
-      z-index: 0;
     }
 
     p {
+      z-index: 5;
+
       &:nth-child(1) {
         font-size: 2rem;
         font-weight: 700;
         line-height: 0;
+        margin-top: 1rem;
       }
       &:nth-child(2) {
         font-size: 4rem;
@@ -40,21 +50,24 @@
         line-height: 1.4;
         border: 5px solid $color-white;
         padding: 0 10px;
-        display: inline-block;
+        width: 170px;
       }
     }
   }
 
-  .box_two {
+  .two {
     background-image: url('https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-size: cover;
-    height: 50%;
-    padding: 2rem;
+    height: 25vh;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
 
     p {
       &:nth-child(1) {
         font-size: 1.8rem;
         font-weight: 500;
+        margin-top: 1rem;
         margin-bottom: 0;
 
         span {
@@ -65,7 +78,7 @@
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 3px;
-
+        margin-bottom: 0;
       }
       &:nth-child(3) {
         font-size: 2.5rem;
@@ -75,12 +88,12 @@
     }
   }
 
-  .box_three {
+  .three {
     background-image: url('https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-size: cover;
-    height: 50%;
-    padding: 2rem;
+    height: 25vh;
+    padding: 1rem;
     text-align: right;
+    justify-content: center;
 
     p {
       &:nth-child(1) {
@@ -100,5 +113,4 @@
       }
     }
   }
-
 }
