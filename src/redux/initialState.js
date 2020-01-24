@@ -1,4 +1,7 @@
 const initialState = {
+  viewport: {
+    mode: null,
+  },
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
@@ -545,21 +548,27 @@ const initialState = {
   opinions: [
     {
       name: 'John Smith',
-      image: 'https://images.unsplash.com/photo-1579042877185-396212310117?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      image:
+        'https://images.unsplash.com/photo-1579042877185-396212310117?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
       profession: 'Furniture client',
-      opinion: 'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
+      opinion:
+        'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
     },
     {
       name: 'Hans Rosling',
-      image: 'https://images.unsplash.com/photo-1572628252713-5f0904beb2fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      image:
+        'https://images.unsplash.com/photo-1572628252713-5f0904beb2fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
       profession: 'Designer',
-      opinion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, sem non dapibus aliquam, lectus mi auctor odio, ut ornare diam nibh eget arcu. Suspendisse facilisis nisl vitae velit finibus, sit amet congue purus euismod. ',
+      opinion:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, sem non dapibus aliquam, lectus mi auctor odio, ut ornare diam nibh eget arcu. Suspendisse facilisis nisl vitae velit finibus, sit amet congue purus euismod. ',
     },
     {
       name: 'Baby Shark',
-      image: 'https://images.unsplash.com/photo-1575899541145-3a349b835bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=332&q=80',
+      image:
+        'https://images.unsplash.com/photo-1575899541145-3a349b835bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=332&q=80',
       profession: 'Furniture client',
-      opinion: 'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
+      opinion:
+        'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
     },
   ],
 };
