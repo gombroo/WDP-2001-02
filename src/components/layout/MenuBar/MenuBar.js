@@ -2,16 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
-
 import styles from './MenuBar.module.scss';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className='col'>
+        <div className='col '>
           <ProductSearch />
         </div>
+
+        <div href='#' className={'col' + styles.hamburger}>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+        </div>
+
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
