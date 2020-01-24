@@ -11,10 +11,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 
 export class Gallery extends React.Component {
+
   render() {
-    const { name = 'nie ma', price = '$100.00', promo = '$50.00', stars } = this.props;
+    const { products } = this.props;
+    const initialProduct = [products[0]];
+    const price = initialProduct.map(standardPrice => standardPrice.price);
+    const discount = initialProduct.map(price => price.promo.discount);
+    const newPrice = price - discount;
+    const title = initialProduct.map(title => title.name);
+    const initialStars = initialProduct.map(star => star.stars);
+    const picture = initialProduct.map(picture => picture.photo);
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -22,9 +32,7 @@ export class Gallery extends React.Component {
             <div className={'col-6'}>
               <div className={styles.boxLeft}>
                 <img
-                  src={
-                    'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=650&w=650'
-                  }
+                  src={ picture }
                   className={'img-fluid'}
                   alt={''}
                 />
@@ -87,15 +95,15 @@ export class Gallery extends React.Component {
                 </ul>
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
-                    <span className={styles.promoPrice}>{promo}</span>
-                    <span className={styles.standardPrice}>{price}</span>
+                    <span className={styles.promoPrice}>{'$ ' + newPrice +'.00'}</span>
+                    <span className={styles.standardPrice}>{'$ ' + price + '.00'}</span>
                   </div>
                   <div className={styles.rate}>
-                    <h5>{name}</h5>
+                    <h5>{title}</h5>
                     <div className={styles.stars}>
                       {[1, 2, 3, 4, 5].map(i => (
                         <a key={i} href='#'>
-                          {i <= stars ? (
+                          {i <= initialStars ? (
                             <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                           ) : (
                             <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
@@ -104,6 +112,9 @@ export class Gallery extends React.Component {
                       ))}
                     </div>
                   </div>
+                </div>
+                <div className={styles.tumbnail}>
+                  <GalleryCarousel />
                 </div>
               </div>
             </div>
@@ -131,12 +142,14 @@ export class Gallery extends React.Component {
     );
   }
 }
+
 Gallery.propTypes = {
-  photo: PropTypes.string,
-  name: PropTypes.string,
-  stars: PropTypes.number,
-  price: PropTypes.number,
-  promo: PropTypes.string,
+  products: PropTypes.array,
+  product: PropTypes.array,
+};
+
+Gallery.defaultProps = {
+  products: [],
 };
 
 export default Gallery;
