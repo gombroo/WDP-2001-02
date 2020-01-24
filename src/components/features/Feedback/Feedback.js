@@ -11,21 +11,10 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 class Feedback extends React.Component {
   state = {
     activePage: 0,
-    isUnmounted: false,
   };
 
-  unmountTrue() {
-    this.setState({ isUnmounted: true });
-  }
-
-  unmountFalse() {
-    setTimeout(() => this.setState({ isUnmounted: false }), 500);
-  }
-
   handlePageChange = newPage => {
-    this.unmountTrue();
     setTimeout(() => this.setState({ activePage: newPage }), 500);
-    this.unmountFalse();
   };
 
   render() {
