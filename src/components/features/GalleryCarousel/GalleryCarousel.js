@@ -12,7 +12,6 @@ class GalleryCarousel extends React.Component {
     const { featured } = this.props;
 
 
-
     return (
       <div className={styles.root}>
         <div className={styles.carousel}>
@@ -22,6 +21,15 @@ class GalleryCarousel extends React.Component {
                 <div className={styles.arrowLeft}>
                   <button><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
                 </div>
+              </div>
+              <div>
+                {featured.map(item => (
+                  <div key={item.id} className={'col '}>
+                    <div className={styles.tumbnail}>
+                      <img  src={item.photo} alt={'alttext'} />
+                    </div>
+                  </div>
+                ))}
               </div>
               <div className={'col '}>
                 <div className={styles.tumbnail}>
@@ -68,5 +76,6 @@ class GalleryCarousel extends React.Component {
 
 GalleryCarousel.propTypes = {
   featured: PropTypes.array,
+  topSeller: PropTypes.array,
 };
 export default GalleryCarousel;
