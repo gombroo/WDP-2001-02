@@ -68,7 +68,7 @@ class Feedback extends React.Component {
               swipeAction={this.handlePageChange}
             >
               <div className='row'>
-                <div className={'col ' + styles.quote} isUnmounted={this.state.isUnmmounted}>
+                <div className={'col ' + styles.quote}>
                   <FontAwesomeIcon icon={faQuoteRight} className={styles.quotes}> stars</FontAwesomeIcon>
                   <div className={styles.opinion}>{opinions[activePage].opinion}</div>
                   <div className={styles.user}>
