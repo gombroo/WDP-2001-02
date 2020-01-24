@@ -5,6 +5,18 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getTopRated = ({ products }) =>
+  products.filter(item => item.topRated === true);
+
+export const getTopSeller = ({ products }) =>
+  products.filter(item => item.topSeller === true);
+
+export const getSaleOff = ({ products }) =>
+  products.filter(item => item.saleOff === true);
+
+export const getFeatured = ({ products }) =>
+  products.filter(item => item.featured === true);
+
 export const getProductById = ({ products }, productId) => {
   const filtered = products.filter(item => item.id === productId);
   return filtered.length ? filtered[0] : { error: true };
