@@ -8,6 +8,14 @@
     height: 84px;
   }
 
+  .hamburger {
+    display: none;
+  }
+
+  .close {
+    display: none;
+  }
+
   .menu {
     display: flex;
     align-self: stretch;
@@ -67,24 +75,28 @@
 /* hide menu and show hamburger from 768 px*/
 @media (max-width: 768px) {
   .root {
-    .menu {
-      display: none;
-    }
-
     .hamburger {
       display: block;
-      flex-grow: 0;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: $color-white;
+      z-index: 5;
+      top: 0;
+      left: 0;
 
-      &:hover {
-        .menu ul {
-          display: block;
-        }
+      &.active {
+        display: block;
       }
-      .bar {
-        width: 35px;
-        height: 5px;
-        background-color: $gray-border-color;
-        margin: 6px 0;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
