@@ -16,8 +16,8 @@ import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 export class Gallery extends React.Component {
 
   render() {
-    const { products } = this.props;
-    const initialProduct = [products[0]];
+    const { featured, topRated, topSeller, saleOff } = this.props;
+    const initialProduct = [featured[0]];
     const price = initialProduct.map(standardPrice => standardPrice.price);
     const discount = initialProduct.map(price => price.promo.discount);
     const newPrice = price - discount;
@@ -41,7 +41,7 @@ export class Gallery extends React.Component {
                 </div>
                 <div className={styles.submenu}>
                   <ul>
-                    <li>FEATURED</li>
+                    <li className={styles.active}>FEATURED</li>
                     <li>TOP SELLER</li>
                     <li>SALE OFF</li>
                     <li>TOP RATED</li>
@@ -114,7 +114,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel />
+                  <GalleryCarousel {...featured}/>
                 </div>
               </div>
             </div>
@@ -144,7 +144,10 @@ export class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  products: PropTypes.array,
+  featured: PropTypes.array,
+  topSeller: PropTypes.array,
+  topRated: PropTypes.array,
+  saleOff: PropTypes.array,
   product: PropTypes.array,
 };
 

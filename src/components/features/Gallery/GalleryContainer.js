@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 
 import Gallery from './Gallery';
 
-import { getAll } from '../../../redux/categoriesRedux.js';
-import { getNew } from '../../../redux/productsRedux.js';
+import { getFeatured, getSaleOff, getTopRated, getTopSeller } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
-  categories: getAll(state),
-  products: getNew(state),
+  featured: getFeatured(state),
+  saleOff: getSaleOff(state),
+  topRated: getTopRated(state),
+  topSeller: getTopSeller(state),
 });
 
 export default connect(mapStateToProps)(Gallery);
