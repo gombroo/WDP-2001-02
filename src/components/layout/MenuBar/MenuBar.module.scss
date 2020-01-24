@@ -51,4 +51,41 @@
   }
 }
 
+/* change order of menu and search */
+@media (max-width: 1200px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: 130px;
 
+      .menu {
+        order: -1;
+      }
+    }
+  }
+}
+
+/* hide menu and show hamburger from 768 px*/
+@media (max-width: 768px) {
+  .root {
+    .menu {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+      flex-grow: 0;
+
+      &:hover {
+        .menu ul {
+          display: block;
+        }
+      }
+      .bar {
+        width: 35px;
+        height: 5px;
+        background-color: $gray-border-color;
+        margin: 6px 0;
+      }
+    }
+  }
+}
