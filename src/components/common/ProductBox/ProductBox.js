@@ -48,9 +48,9 @@ const ProductBox = ({ name, price, promo, stars, favorite, compare, photo }) => 
         </Button>
       </div>
       <div className={styles.price}>
-        <div className={styles.promoPrice}>$ 650</div>
+        {promo && <div className={styles.promoPrice}>$ {price}</div>}
         <Button noHover variant='small'>
-          $ 500
+          $ {promo ? Math.round(price * (1 - promo.discount * 0.01)) : price}
         </Button>
       </div>
     </div>
