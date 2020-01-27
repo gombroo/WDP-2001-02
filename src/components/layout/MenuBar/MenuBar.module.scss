@@ -71,12 +71,18 @@
 /* hide menu and show hamburger from 768 px*/
 @media (max-width: 768px) {
   .root {
-    .hamburger {
-      display: block;
+    :global(.container) > :global(.row) {
+      height: 100%;
+      padding: 5px 0;
 
-      .icon {
-        font-size: 3rem;
-        padding-right: 10px;
+      .hamburger {
+        display: block;
+        z-index: 999;
+
+        .icon {
+          font-size: 3rem;
+          padding-right: 10px;
+        }
       }
     }
 
@@ -84,10 +90,9 @@
       display: none;
       position: absolute;
       width: 100vw;
-      height: 100vh;
+      height: 80vh;
       background-color: $color-white;
-      z-index: 5;
-      top: 300px;
+      z-index: 1;
       left: 0;
 
       &.active {
