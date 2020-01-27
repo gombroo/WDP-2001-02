@@ -41,7 +41,6 @@ const FeaturedSection = stars => (
               src='https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
               alt=''
             />
-
             <div className={styles.buttons__hover}>
               <Button variant='small'>
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
