@@ -45,7 +45,7 @@ class MenuBar extends React.Component {
             </div>
             <div
               className={
-                styles.menu + ` col-auto ${this.state.menuOpen ? 'active' : ''}`
+                styles.menu + ` col-auto ${this.state.menuOpen ? styles.active : ''}`
               }
             >
               <ul>

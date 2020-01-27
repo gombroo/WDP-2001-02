@@ -74,7 +74,14 @@
   .root {
     .hamburger {
       display: block;
+
+      .icon {
+        font-size: 3rem;
+        padding-right: 10px;
+        //color: $gray-text-color;
+      }
     }
+
     .menu {
       display: none;
       position: absolute;
@@ -82,7 +89,7 @@
       height: 100vh;
       background-color: $color-white;
       z-index: 5;
-      top: 0;
+      top: 300px;
       left: 0;
 
       &.active {
