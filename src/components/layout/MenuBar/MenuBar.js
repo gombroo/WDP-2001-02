@@ -8,6 +8,16 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 
 class MenuBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false,
+    };
+  }
+
+  handleMenuClick() {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  }
 
   render() {
     return (
@@ -17,11 +27,31 @@ class MenuBar extends React.Component {
             <div className='col'>
               <ProductSearch />
             </div>
+
+            <div
+              className={styles.hamburger}
+              icon={faBars}
+              open={this.state.menuOpen}
+              onClick={() =>
+                this.handleMenuClick(
+                  document.querySelector('toggle').classList.add('active')
+                )
+              }
+            />
+
             <div className={styles.hamburger}>
-              <FontAwesomeIcon onClick={this.toggle} className={styles.icon} icon={faBars} />
+              <FontAwesomeIcon
+                onClick={this.toggle}
+                className={styles.icon}
+                icon={faBars}
+              />
             </div>
             <div className={styles.close}>
-              <FontAwesomeIcon onClick={this.toggle} className={styles.icon} icon={faTimes} />
+              <FontAwesomeIcon
+                onClick={this.toggle}
+                className={styles.icon}
+                icon={faTimes}
+              />
             </div>
             <div className={'col-auto ' + styles.menu}>
               <ul>
