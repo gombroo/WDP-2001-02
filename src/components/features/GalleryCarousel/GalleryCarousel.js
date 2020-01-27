@@ -8,9 +8,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class GalleryCarousel extends React.Component {
-  render () {
-    const { featured } = this.props;
 
+  state = {
+    activeProduct: 0,
+  }
+
+  slidesNumber () {
+    this.setState({ isUnmounted: true });
+  }
+
+
+  render () {
+    const {activeGallery} = this.props;
+    const { activeProduct } = this.state;
+    const tumbnailsItems = 6;
 
     return (
       <div className={styles.root}>
@@ -22,45 +33,17 @@ class GalleryCarousel extends React.Component {
                   <button><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
                 </div>
               </div>
-              <div>
-                {featured.map(item => (
+
+              {activeGallery
+                .slice(activeProduct, activeProduct + tumbnailsItems)
+                .map(item => (
                   <div key={item.id} className={'col '}>
                     <div className={styles.tumbnail}>
                       <img  src={item.photo} alt={'alttext'} />
                     </div>
                   </div>
                 ))}
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+01'} alt={'alttext'} />
-                </div>
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+02'} alt={'alttext'} />
-                </div>
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+03'} alt={'alttext'} />
-                </div>
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+04'} alt={'alttext'} />
-                </div>
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+05'} alt={'alttext'} />
-                </div>
-              </div>
-              <div className={'col '}>
-                <div className={styles.tumbnail}>
-                  <img src={'http://placehold.it/100x80?text=thumb+06'} alt={'alttext'} />
-                </div>
-              </div>
+
               <div className={'col-1'}>
                 <div className={styles.arrowRight}>
                   <button><FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></button>
@@ -75,7 +58,7 @@ class GalleryCarousel extends React.Component {
 }
 
 GalleryCarousel.propTypes = {
-  featured: PropTypes.array,
+  activeGallery: PropTypes.array,
   topSeller: PropTypes.array,
 };
 export default GalleryCarousel;

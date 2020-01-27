@@ -114,7 +114,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel {...featured}/>
+                  <GalleryCarousel activeGallery={ featured }/>
                 </div>
               </div>
             </div>
