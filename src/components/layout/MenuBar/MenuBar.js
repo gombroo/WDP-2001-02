@@ -24,9 +24,9 @@ class MenuBar extends React.Component {
     let iconType;
 
     if (this.state.menuOpen) {
-      iconType = faBars;
-    } else {
       iconType = faTimes;
+    } else {
+      iconType = faBars;
     }
 
     return (
@@ -43,8 +43,11 @@ class MenuBar extends React.Component {
                 icon={iconType}
               />
             </div>
-
-            <div className={'col-auto ' + styles.menu}>
+            <div
+              className={
+                styles.menu + ` col-auto ${this.state.menuOpen ? 'active' : ''}`
+              }
+            >
               <ul>
                 <li>
                   <a href='#' className={styles.active}>
