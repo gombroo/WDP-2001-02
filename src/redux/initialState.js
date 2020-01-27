@@ -1,10 +1,36 @@
 const initialState = {
+  viewport: {
+    mode: null,
+  },
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
     { id: 'sofa', name: 'Sofa' },
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
+  ],
+  promotion: [
+    {
+      title: 'Guest Room',
+      subtitle: 'Sofa',
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: '-20%',
+    },
+    {
+      title: 'Office Chair',
+      subtitle: 'Collection',
+      image:
+        'https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: '$200.00',
+    },
+    {
+      title: 'Special Collection',
+      subtitle: 'Collection',
+      image:
+        'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: 'Save up 45% of furniture',
+    },
   ],
   products: [
     {
@@ -16,9 +42,9 @@ const initialState = {
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
       favorite: true,
-      compare: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 4,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -30,6 +56,7 @@ const initialState = {
       favorite: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      rating: 3,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -39,7 +66,6 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 15 },
       newFurniture: true,
-      compare: true,
       photo:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -273,10 +299,301 @@ const initialState = {
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
+    {
+      id: 'cool-chair-1',
+      name: 'Cool Chair 1',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-chair-2',
+      name: 'Cool Chair 2',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-chair-3',
+      name: 'Cool Chair 3',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-chair-4',
+      name: 'Cool Chair 4',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-chair-5',
+      name: 'Cool Chair 5',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-chair-6',
+      name: 'Cool Chair 6',
+      category: 'chair',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-1',
+      name: 'Cool Sofa 1',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-2',
+      name: 'Cool Sofa 2',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-3',
+      name: 'Cool Sofa 3',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-4',
+      name: 'Cool Sofa 4',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-5',
+      name: 'Cool Sofa 5',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-sofa-6',
+      name: 'Cool Sofa 6',
+      category: 'sofa',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-1',
+      name: 'Cool Table 1',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-2',
+      name: 'Cool Table 2',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-3',
+      name: 'Cool Table 3',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-4',
+      name: 'Cool Table 4',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-5',
+      name: 'Cool Table 5',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-table-6',
+      name: 'Cool Table 6',
+      category: 'table',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-1',
+      name: 'Cool Dining 1',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-2',
+      name: 'Cool Dining 2',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-3',
+      name: 'Cool Dining 3',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-4',
+      name: 'Cool Dining 4',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-5',
+      name: 'Cool Dining 5',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'cool-dining-6',
+      name: 'Cool Dining 6',
+      category: 'dining',
+      price: 30,
+      stars: 2,
+      promo: { name: 'sale', discount: 25 },
+      newFurniture: true,
+      photo:
+        'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
   ],
   cart: {
     products: [],
   },
+
+  opinions: [
+    {
+      name: 'John Smith',
+      image:
+        'https://images.unsplash.com/photo-1579042877185-396212310117?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      profession: 'Furniture client',
+      opinion:
+        'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
+    },
+    {
+      name: 'Hans Rosling',
+      image:
+        'https://images.unsplash.com/photo-1572628252713-5f0904beb2fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      profession: 'Designer',
+      opinion:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, sem non dapibus aliquam, lectus mi auctor odio, ut ornare diam nibh eget arcu. Suspendisse facilisis nisl vitae velit finibus, sit amet congue purus euismod. ',
+    },
+    {
+      name: 'Baby Shark',
+      image:
+        'https://images.unsplash.com/photo-1575899541145-3a349b835bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=332&q=80',
+      profession: 'Furniture client',
+      opinion:
+        'Praesent massa justo, finibus in nisl nec, luctus blandit sem. Mauris vitae elementum ante, vitae porttitor dui. ',
+    },
+  ],
 };
 
 export default initialState;

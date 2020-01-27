@@ -2,28 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isUnmounted: false,
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+  unmountTrue() {
+    this.setState({ isUnmounted: true });
   }
 
+  unmountFalse() {
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
+  }
+
+  handlePageChange = newPage => {
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activePage: newPage }), 1100);
+    this.unmountFalse();
+  };
+
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activeCategory: newCategory }), 1100);
+    this.unmountFalse();
   }
 
   render() {
-    const { categories, products } = this.props;
+    let pageItems;
+    const { categories, products, toggleCompare, viewport } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / pageItems);
+
+    const comparedProducts = products.filter(product => product.compare);
+    const handleCompare = (e, id) => {
+      e.preventDefault();
+      toggleCompare(id);
+    };
+
+    if (viewport.mode === 'desktop') {
+      pageItems = 8;
+    } else if (viewport.mode === 'tablet') {
+      pageItems = 4;
+    } else {
+      pageItems = 1;
+    }
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -66,13 +97,51 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+          <Swipeable
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
+            swipeAction={this.handlePageChange}
+          >
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * pageItems, (activePage + 1) * pageItems)
+                .map(item => (
+                  <div key={item.id} className='col-12 col-md-6 col-lg-4 col-xl-3'>
+                    <ProductBox
+                      productId={item.id}
+                      isUnmounted={this.state.isUnmounted}
+                    />
+                  </div>
+                ))}
+            </div>
+          </Swipeable>
+
+          {comparedProducts.length >= 1 && (
+            <div className={styles.compare_box}>
+              <div className={styles.compare_list}>
+                <div className={styles.compare_list_left}>
+                  <p>Added for comparison:</p>
+                  {comparedProducts.map(product => (
+                    <div className={styles.compare_item} key={product.id}>
+                      <img
+                        src={product.photo}
+                        width='40'
+                        height='40'
+                        alt={product.category}
+                      ></img>
+                      <Link
+                        className={styles.mobile_close}
+                        onClick={e => handleCompare(e, product.id)}
+                      ></Link>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.compare_list_right}>
+                  <Button variant='small'>Compare</Button>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -94,10 +163,12 @@ NewFurniture.propTypes = {
       category: PropTypes.string,
       price: PropTypes.number,
       stars: PropTypes.number,
-      promo: PropTypes.string,
+      promo: PropTypes.object,
       newFurniture: PropTypes.bool,
     })
   ),
+  toggleCompare: PropTypes.func,
+  viewport: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

@@ -10,7 +10,7 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
-  @extend%hover-transition;
+  @extend%hover-no-shake-transition;
 
   &:not(.noHover):hover {
     color: $light-text-color !important;
@@ -28,13 +28,14 @@
 }
 
 .outline {
+  cursor: pointer;
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-bg;
   color: $text-color;
   font-size: 13px;
   line-height: 22px;
-  @extend%hover-transition;
+  @extend%hover-no-shake-transition;
 
   &:not(.noHover):hover {
     background-color: $button-bg;
@@ -46,3 +47,4 @@
     color: $light-text-color;
   }
 }
+

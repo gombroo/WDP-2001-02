@@ -25,15 +25,38 @@
       z-index: 0;
     }
 
-    select {
+    .select {
       -webkit-appearance: none;
       border: 0;
       background-color: transparent;
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      display: inline-block;
+
+      &:hover .option{
+        display: block;
+      }
+    }
+
+    .dropbtn {
+      border: none;
+      background-color: transparent;
       outline-style: none;
     }
+
+    .option {
+      position: absolute;
+      display: none;
+      background-color: $color-white;
+      width: 75%;
+      padding-left: 15px;
+
+      a {
+        display: block;
+      }
+    }
+
   }
 
   .searchField {
@@ -56,6 +79,40 @@
       border: 0;
       background-color: transparent;
       outline: none;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .root {
+    display: flex;
+
+    .category {
+      flex-grow: 1;
+    }
+
+    .searchField {
+      flex-grow: 1;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    display: flex;
+
+    .category {
+      display: none;
+    }
+
+    .searchField {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .menuMobile {
+      flex-grow: 1;
     }
   }
 }
