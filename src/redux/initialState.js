@@ -9,6 +9,29 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  promotion: [
+    {
+      title: 'Guest Room',
+      subtitle: 'Sofa',
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: '-20%',
+    },
+    {
+      title: 'Office Chair',
+      subtitle: 'Collection',
+      image:
+        'https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: '$200.00',
+    },
+    {
+      title: 'Special Collection',
+      subtitle: 'Collection',
+      image:
+        'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      discount: 'Save up 45% of furniture',
+    },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
