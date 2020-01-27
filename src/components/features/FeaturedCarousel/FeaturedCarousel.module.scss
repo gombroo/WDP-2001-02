@@ -58,7 +58,7 @@ img {
         padding: 10px 30px;
         border: none;
         border-radius: 5px;
-        @extend%hover-transition;
+        @extend%hover-no-shake-transition;
 
         &:hover {
             background-color: $color-orange;
