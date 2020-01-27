@@ -27,7 +27,7 @@ class Feedback extends React.Component {
         <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>

@@ -83,7 +83,7 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : undefined}
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -168,7 +168,7 @@ NewFurniture.propTypes = {
     })
   ),
   toggleCompare: PropTypes.func,
-  viewport: PropTypes.string,
+  viewport: PropTypes.object,
 };
 
 NewFurniture.defaultProps = {
