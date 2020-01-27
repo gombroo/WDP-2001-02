@@ -17,7 +17,6 @@ class MenuBar extends React.Component {
 
   handleMenuClick() {
     this.setState({ menuOpen: !this.state.menuOpen });
-    //this.document.querySelector('.hamburger').classList.add('active');
   }
 
   render() {
