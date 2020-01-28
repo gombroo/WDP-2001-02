@@ -139,7 +139,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ this.handleGalleryChange() }/>
+                  <GalleryCarousel activeGallery={ topRated }/>
                 </div>
               </div>
             </div>
