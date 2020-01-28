@@ -7,6 +7,7 @@ import FeaturedSection from '../../features/FeaturedSection/FeaturedSection';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Promotion from '../../features/Promotion/Promotion';
+import Blog from '../../features/Blog/Blog';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 
 const Homepage = () => (
@@ -15,6 +16,7 @@ const Homepage = () => (
     <FeatureBoxes />
     <Promotion />
     <NewFurniture />
+    <Blog />
     <Feedback />
   </div>
 );
