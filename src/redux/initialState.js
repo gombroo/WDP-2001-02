@@ -9,6 +9,14 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+
+  galeries: [
+    {id: 'featured', name: 'FEATURED'},
+    {id: 'topSeller', name: 'TOP SELLER'},
+    {id: 'saleOff', name: 'SALE OFF'},
+    {id: 'topRated', name: 'TOP RATED'},
+  ],
+
   promotion: [
     {
       title: 'Guest Room',
@@ -42,6 +50,9 @@ const initialState = {
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
       favorite: true,
+      compare: true,
+      featured: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       rating: 4,
@@ -54,6 +65,8 @@ const initialState = {
       stars: 2,
       newFurniture: true,
       favorite: true,
+      featured: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       rating: 3,
@@ -66,6 +79,9 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 15 },
       newFurniture: true,
+      compare: true,
+      featured: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -76,6 +92,8 @@ const initialState = {
       price: 30,
       stars: 2,
       newFurniture: true,
+      featured: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -87,6 +105,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 10 },
       newFurniture: true,
+      featured: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -98,6 +118,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 10 },
       newFurniture: true,
+      featured: true,
+      saleOff: true,
       photo:
         'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -109,6 +131,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -120,6 +144,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960',
     },
@@ -131,6 +157,9 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      topSeller: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -142,6 +171,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      saleOff: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -153,6 +184,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -164,6 +197,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      topRated: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -175,6 +210,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      topSeller: true,
+      saleOff: true,
       photo:
         'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -186,6 +223,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -197,6 +236,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -208,6 +249,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960',
     },
@@ -219,6 +262,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      featured: true,
       photo:
         'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -230,6 +275,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -241,6 +288,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      featured: true,
       photo:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -252,6 +301,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -263,6 +314,10 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      featured: true,
+      topSeller: true,
+      topRated: true,
+      saleOff: true,
       photo:
         'https://images.pexels.com/photos/3558644/pexels-photo-3558644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -274,6 +329,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      topRated: true,
+      topSeller: true,
       photo:
         'https://images.pexels.com/photos/3190541/pexels-photo-3190541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -285,6 +342,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      saleOff: true,
+      topRated: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -296,6 +355,8 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      topRated: true,
+      featured: true,
       photo:
         'https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
