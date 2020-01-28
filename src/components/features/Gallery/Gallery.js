@@ -16,7 +16,7 @@ import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 export class Gallery extends React.Component {
 
   state = {
-    activeGaleries: this.props.featured,
+    activeGalleries: this.props.featured,
   }
 
   unmountTrue() {
@@ -34,15 +34,9 @@ export class Gallery extends React.Component {
     console.log('newGallery', newGallery);
   }
 
-  loadGallery(newGallery) {
-    if (newGallery === this.props) {
-      const load = this.props;
-    }
-  }
-
   render() {
     const { featured, topRated, topSeller, saleOff, galeries } = this.props;
-    const { activeGaleries } = this.state;
+    const { activeGalleries } = this.state;
     const initialProduct = [featured[0]];
     const price = initialProduct.map(standardPrice => standardPrice.price);
     const discount = initialProduct.map(price => price.promo.discount);
@@ -70,7 +64,6 @@ export class Gallery extends React.Component {
                     {galeries.map(item => (
                       <li key={item.id}>
                         <a
-                          className={item.id === activeGaleries && styles.active}
                           onClick={() => this.handleGalleryChange(item.id)}
                         >
                           {item.name}
@@ -146,7 +139,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ this.loadGallery() }/>
+                  <GalleryCarousel activeGallery={ this.handleGalleryChange() }/>
                 </div>
               </div>
             </div>

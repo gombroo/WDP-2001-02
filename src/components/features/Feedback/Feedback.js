@@ -6,24 +6,15 @@ import styles from './Feedback.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
+import Swipeable from '../../common/Swipeable/Swipeable';
+
 class Feedback extends React.Component {
   state = {
     activePage: 0,
-    isUnmounted: false,
   };
 
-  unmountTrue() {
-    this.setState({ isUnmounted: true });
-  }
-
-  unmountFalse() {
-    setTimeout(() => this.setState({ isUnmounted: false }), 500);
-  }
-
   handlePageChange = newPage => {
-    this.unmountTrue();
     setTimeout(() => this.setState({ activePage: newPage }), 500);
-    this.unmountFalse();
   };
 
   render() {
@@ -36,7 +27,7 @@ class Feedback extends React.Component {
         <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -48,6 +39,7 @@ class Feedback extends React.Component {
       <div className={styles.root}>
         {opinions[0] &&
           <div className='container'>
+
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
                 <div className={'col-auto ' + styles.heading}>
@@ -58,21 +50,28 @@ class Feedback extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
-              <div className={'col ' + styles.quote}>
-                <FontAwesomeIcon icon={faQuoteRight} className={styles.quotes}> stars</FontAwesomeIcon>
-                <div className={styles.opinion}>{opinions[0].opinion}</div>
-                <div className={styles.user}>
-                  <div className={styles.user_image}>
-                    <img src={opinions[0].image} alt={opinions[0].profession}></img>
-                  </div>
-                  <div className={styles.user_name}>
-                    <h4>{opinions[0].name}</h4>
-                    <p>{opinions[0].profession}</p>
+
+            <Swipeable
+              itemsCount={3}
+              activeItem={this.state.activePage}
+              swipeAction={this.handlePageChange}
+            >
+              <div className='row'>
+                <div className={'col ' + styles.quote}>
+                  <FontAwesomeIcon icon={faQuoteRight} className={styles.quotes}> stars</FontAwesomeIcon>
+                  <div className={styles.opinion}>{opinions[activePage].opinion}</div>
+                  <div className={styles.user}>
+                    <div className={styles.user_image}>
+                      <img src={opinions[activePage].image} alt={opinions[activePage].profession}></img>
+                    </div>
+                    <div className={styles.user_name}>
+                      <h4>{opinions[activePage].name}</h4>
+                      <p>{opinions[activePage].profession}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Swipeable>
           </div>
         }
       </div>

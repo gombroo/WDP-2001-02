@@ -35,8 +35,8 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const pageItems = 8;
-    const { categories, products, toggleCompare } = this.props;
+    let pageItems;
+    const { categories, products, toggleCompare, viewport } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -48,10 +48,18 @@ class NewFurniture extends React.Component {
       toggleCompare(id);
     };
 
+    if (viewport.mode === 'desktop') {
+      pageItems = 8;
+    } else if (viewport.mode === 'tablet') {
+      pageItems = 4;
+    } else {
+      pageItems = 1;
+    }
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
@@ -75,7 +83,7 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : undefined}
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -99,7 +107,10 @@ class NewFurniture extends React.Component {
                 .slice(activePage * pageItems, (activePage + 1) * pageItems)
                 .map(item => (
                   <div key={item.id} className='col-12 col-md-6 col-lg-4 col-xl-3'>
-                    <ProductBox productId={item.id} isUnmounted={this.state.isUnmounted} />
+                    <ProductBox
+                      productId={item.id}
+                      isUnmounted={this.state.isUnmounted}
+                    />
                   </div>
                 ))}
             </div>
@@ -131,7 +142,6 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           )}
-
         </div>
       </div>
     );
@@ -158,6 +168,7 @@ NewFurniture.propTypes = {
     })
   ),
   toggleCompare: PropTypes.func,
+  viewport: PropTypes.object,
 };
 
 NewFurniture.defaultProps = {
