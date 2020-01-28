@@ -4,24 +4,26 @@
 
   background-color: transparent;
 
+  .carousel {
+    position: relative;
+  }
+
   button {
     width: 30px;
     height: 60px;
     background-color: $color-black;
     border: none;
+
+    svg {
+      color: $color-white;
     }
-
-  .arrowRight {
-    padding: 0 0 0 auto;
   }
 
-  .arrowLeft {
-    padding: 0 auto 0 0;
+    .tumbnail {
 
-  }
-
-  .tumbnail {
-
+    .btn {
+      padding: 0;
+    }
 
     img {
       width: 60px;

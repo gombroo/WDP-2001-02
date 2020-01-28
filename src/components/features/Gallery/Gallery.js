@@ -15,8 +15,34 @@ import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 
 export class Gallery extends React.Component {
 
+  state = {
+    activeGaleries: this.props.featured,
+  }
+
+  unmountTrue() {
+    this.setState({ isUnmounted: true });
+  }
+
+  unmountFalse() {
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
+  }
+
+  handleGalleryChange(newGallery) {
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activeGalleries: newGallery }), 1100);
+    this.unmountFalse();
+    console.log('newGallery', newGallery);
+  }
+
+  loadGallery(newGallery) {
+    if (newGallery === this.props) {
+      const load = this.props;
+    }
+  }
+
   render() {
-    const { featured, topRated, topSeller, saleOff } = this.props;
+    const { featured, topRated, topSeller, saleOff, galeries } = this.props;
+    const { activeGaleries } = this.state;
     const initialProduct = [featured[0]];
     const price = initialProduct.map(standardPrice => standardPrice.price);
     const discount = initialProduct.map(price => price.promo.discount);
@@ -41,10 +67,16 @@ export class Gallery extends React.Component {
                 </div>
                 <div className={styles.submenu}>
                   <ul>
-                    <li className={styles.active}>FEATURED</li>
-                    <li>TOP SELLER</li>
-                    <li>SALE OFF</li>
-                    <li>TOP RATED</li>
+                    {galeries.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeGaleries && styles.active}
+                          onClick={() => this.handleGalleryChange(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <ul className={styles.buttons}>
@@ -114,7 +146,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ featured }/>
+                  <GalleryCarousel activeGallery={ this.loadGallery() }/>
                 </div>
               </div>
             </div>
@@ -149,6 +181,7 @@ Gallery.propTypes = {
   topRated: PropTypes.array,
   saleOff: PropTypes.array,
   product: PropTypes.array,
+  galeries: PropTypes.array,
 };
 
 Gallery.defaultProps = {

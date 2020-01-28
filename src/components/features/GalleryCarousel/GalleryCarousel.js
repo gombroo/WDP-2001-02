@@ -28,7 +28,7 @@ class GalleryCarousel extends React.Component {
         <div className={styles.carousel}>
           <div className='container'>
             <div className='row'>
-              <div className={'col-1'}>
+              <div className={'col-1' + styles.btn}>
                 <div className={styles.arrowLeft}>
                   <button><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
                 </div>
@@ -37,14 +37,16 @@ class GalleryCarousel extends React.Component {
               {activeGallery
                 .slice(activeProduct, activeProduct + tumbnailsItems)
                 .map(item => (
-                  <div key={item.id} className={'col '}>
+                  <div key={item.id} className={'col'}>
                     <div className={styles.tumbnail}>
-                      <img  src={item.photo} alt={'alttext'} />
+                      <a href={'#'}>
+                        <img src={item.photo} alt={'alttext'} />
+                      </a>
                     </div>
                   </div>
                 ))}
 
-              <div className={'col-1'}>
+              <div className={'col-1' + styles.btn}>
                 <div className={styles.arrowRight}>
                   <button><FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></button>
                 </div>
