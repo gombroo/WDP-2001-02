@@ -8,6 +8,10 @@
     height: 84px;
   }
 
+  .hamburger {
+    display: none;
+  }
+
   .menu {
     display: flex;
     justify-content: center;
@@ -58,24 +62,40 @@
 /* hide menu and show hamburger from 768 px*/
 @media (max-width: 768px) {
   .root {
-    .menu {
-      display: none;
-    }
+    :global(.container) > :global(.row) {
+      height: 100%;
+      padding: 5px 0;
 
-    .hamburger {
-      display: block;
-      flex-grow: 0;
+      .hamburger {
+        display: block;
+        z-index: 999;
 
-      &:hover {
-        .menu ul {
-          display: block;
+        .icon {
+          font-size: 3rem;
+          padding-right: 10px;
         }
       }
-      .bar {
-        width: 35px;
-        height: 5px;
-        background-color: $gray-border-color;
-        margin: 6px 0;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      width: 100vw;
+      background-color: $color-white;
+      z-index: 1;
+      left: 0;
+
+      &.active {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 3px solid;
+        padding-bottom: 1rem;
       }
     }
   }
