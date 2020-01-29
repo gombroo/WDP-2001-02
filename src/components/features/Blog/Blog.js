@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './Blog.module.scss';
 
+import Swipeable from '../../common/Swipeable/Swipeable';
+import BlogPost from '../../common/BlogPost/BlogPost';
+
 class Blog extends React.Component {
+
   render() {
     return (
       <div className={styles.root}>
@@ -14,10 +18,21 @@ class Blog extends React.Component {
                 <h3>Latest Blog</h3>
               </div>
               <div className={'col-auto ' + styles.dots}>
-                <ul>dots</ul>
+                <ul>...</ul>
               </div>
             </div>
           </div>
+
+          <Swipeable>
+            <div className='row'>
+              <div className='col-auto '>
+                {/*<BlogPost {...blog} />*/}
+                <BlogPost />
+                <BlogPost />
+              </div>
+            </div>
+          </Swipeable>
+
         </div>
       </div>
     );

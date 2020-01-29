@@ -9,8 +9,9 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
-  posts: [
+  blog: [
     {
+      post: 1,
       title: 'The Best Furniture Ever',
       date: '20 Nov 2019',
       comments: '3 comments',
@@ -20,6 +21,7 @@ const initialState = {
         'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
     },
     {
+      post: 2,
       title: 'The Worst Furniture Ever',
       date: '24 Dec 2019',
       comments: '6 comments',
@@ -29,9 +31,20 @@ const initialState = {
         'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
     },
     {
+      post: 3,
       title: 'Products That Fight Static',
       date: '28 Dec 2019',
       comments: '4 comments',
+      image:
+        'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      text:
+        'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
+    },
+    {
+      post: 4,
+      title: 'Products That Fight Static',
+      date: '12 Nov 2019',
+      comments: '1 comment',
       image:
         'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       text:
