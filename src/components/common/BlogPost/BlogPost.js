@@ -9,8 +9,8 @@ const BlogPost = ({ title, image, text, comments, date }) => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-4'>
-            <div className={styles.thumbnail}>{image}</div>
+          <div className={styles.single}>
+            <div className={styles.thumb}></div>
             <div className={styles.meta}>
               <div className={styles.date}>{date}12.12.2019</div>
               <div className={styles.comment}>{comments}4 comments</div>
@@ -24,6 +24,7 @@ const BlogPost = ({ title, image, text, comments, date }) => {
             </div>
             <Button variant='main'>Read more</Button>
           </div>
+
         </div>
       </div>
     </div>

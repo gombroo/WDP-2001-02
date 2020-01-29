@@ -7,6 +7,9 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import BlogPost from '../../common/BlogPost/BlogPost';
 
 class Blog extends React.Component {
+  state = {
+    activePage: 0,
+  };
 
   render() {
     return (
@@ -25,10 +28,12 @@ class Blog extends React.Component {
 
           <Swipeable>
             <div className='row'>
-              <div className='col-auto '>
-                {/*<BlogPost {...blog} />*/}
-                <BlogPost />
-                <BlogPost />
+              <div className='container'>
+                <div className='d-flex flex-column flex-md-row'>
+                  <BlogPost />
+                  <BlogPost />
+                  <BlogPost />
+                </div>
               </div>
             </div>
           </Swipeable>
