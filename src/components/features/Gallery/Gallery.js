@@ -19,18 +19,8 @@ export class Gallery extends React.Component {
     activeGalleries: this.props.featured,
   }
 
-  unmountTrue() {
-    this.setState({ isUnmounted: true });
-  }
-
-  unmountFalse() {
-    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
-  }
-
   handleGalleryChange(newGallery) {
-    this.unmountTrue();
     setTimeout(() => this.setState({ activeGalleries: newGallery }), 1100);
-    this.unmountFalse();
     console.log('newGallery', newGallery);
   }
 
@@ -52,7 +42,7 @@ export class Gallery extends React.Component {
             <div className={'col-6'}>
               <div className={styles.boxLeft}>
                 <img
-                  src={ picture }
+                  src={ activeGalleries[0].photo }
                   className={'img-fluid'}
                   alt={''}
                 />
@@ -64,7 +54,7 @@ export class Gallery extends React.Component {
                     {galeries.map(item => (
                       <li key={item.id}>
                         <a
-                          onClick={() => this.handleGalleryChange(item.id)}
+                          onClick={() => this.handleGalleryChange(this.props[item.id])}
                         >
                           {item.name}
                         </a>
@@ -139,7 +129,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ topRated }/>
+                  <GalleryCarousel activeGallery={ activeGalleries }/>
                 </div>
               </div>
             </div>
