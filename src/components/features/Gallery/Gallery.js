@@ -26,11 +26,6 @@ export class Gallery extends React.Component {
   render() {
     const { featured, topRated, topSeller, saleOff, galeries } = this.props;
     const { activeGalleries } = this.state;
-    const initialProduct = [featured[0]];
-    const price = initialProduct.map(standardPrice => standardPrice.price);
-    const title = initialProduct.map(title => title.name);
-    const initialStars = initialProduct.map(star => star.stars);
-    const picture = initialProduct.map(picture => picture.photo);
 
     return (
       <div className={styles.root}>
@@ -108,16 +103,16 @@ export class Gallery extends React.Component {
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
                     <span className={styles.promoPrice}>
-                    $ {activeGalleries[1].promo ? Math.round(price - activeGalleries[1].promo.discount) : price}
+                    $ {activeGalleries[1].promo ? Math.round(activeGalleries[1].price - activeGalleries[1].promo.discount) : activeGalleries[1].price}
                     </span>
-                    {activeGalleries[1].promo && <span className={styles.standardPrice}>$ { price }.00</span>}
+                    {activeGalleries[1].promo && <span className={styles.standardPrice}>$ { activeGalleries[1].price }.00</span>}
                   </div>
                   <div className={styles.rate}>
-                    <h5>{title}</h5>
+                    <h5>{activeGalleries[1].name}</h5>
                     <div className={styles.stars}>
                       {[1, 2, 3, 4, 5].map(i => (
                         <a key={i} href='#'>
-                          {i <= initialStars ? (
+                          {i <= activeGalleries[1].stars ? (
                             <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                           ) : (
                             <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
