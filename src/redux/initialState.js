@@ -238,6 +238,7 @@ const initialState = {
       newFurniture: true,
       saleOff: true,
       topSeller: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -379,6 +380,7 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -500,6 +502,7 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },

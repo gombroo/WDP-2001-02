@@ -14,27 +14,10 @@ import Button from '../Button/Button';
 
 import styles from './FeaturedBox.module.scss';
 
-const FeaturedBox = () => {
+const FeaturedBox = ({ name, price }) => {
+
   return (
-    <div className={styles.root}>
-      <div className={styles.header}>
-        Hot deals
-        <div className={styles.dots}>
-          <ul>
-            <li>
-              <a href='#'> </a>
-            </li>
-            <li>
-              <a href='#' className={styles.active}>
-                {' '}
-              </a>
-            </li>
-            <li>
-              <a href='#'> </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div>
       <div className={styles.photo}>
         <img
           src='https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
@@ -69,7 +52,7 @@ const FeaturedBox = () => {
         </div>
       </div>
       <div className={styles.content}>
-        <h5>Aenean Ru Bristique 1</h5>
+        <h5>{name}</h5>
         <div className={styles.stars}>
           <a href='#'>
             <FontAwesomeIcon icon={faStar}> stars</FontAwesomeIcon>
@@ -94,10 +77,10 @@ const FeaturedBox = () => {
           </Button>
         </div>
         <div className={styles.price}>
-          <div className={styles.promoPrice}>$ 675</div>
+          <div className={styles.promoPrice}>$ {price + 30}</div>
 
           <Button noHover variant='small'>
-            $ 650
+            $ {price}
           </Button>
         </div>
       </div>
@@ -105,6 +88,9 @@ const FeaturedBox = () => {
   );
 };
 
-FeaturedBox.propTypes = {};
+FeaturedBox.propTypes = {
+  name: PropTypes.string,
+  price: PropTypes.string,
+};
 
 export default FeaturedBox;
