@@ -21,13 +21,7 @@ class MenuBar extends React.Component {
   }
 
   render() {
-    let iconType;
-
-    if (this.state.menuOpen) {
-      iconType = faTimes;
-    } else {
-      iconType = faBars;
-    }
+    const { navCategories } = this.props;
 
     return (
       <div className={styles.root}>
@@ -40,7 +34,7 @@ class MenuBar extends React.Component {
               <FontAwesomeIcon
                 onClick={() => this.handleMenuClick()}
                 className={styles.icon}
-                icon={iconType}
+                icon={this.state.menuOpen ? faTimes : faBars}
               />
             </div>
             <nav
@@ -48,13 +42,9 @@ class MenuBar extends React.Component {
                 styles.menu + ` col-auto ${this.state.menuOpen ? styles.active : ''}`
               }
             >
-              <NavLink to='/' activeClassName='active'>Home</NavLink>
-              <NavLink to='/shop/all' activeClassName='active'>Furniture</NavLink>
-              <NavLink to='/shop/chair' activeClassName='active'>Chair</NavLink>
-              <NavLink to='/shop/table' activeClassName='active'>Table</NavLink>
-              <NavLink to='/shop/sofa' activeClassName='active'>Sofa</NavLink>
-              <NavLink to='/shop/bedroom' activeClassName='active'>Bedroom</NavLink>
-              <NavLink to='/blog' activeClassName='active'>Blog</NavLink>
+              {navCategories.map(category => (
+                <NavLink key={category.id} to={category.link} activeClassName='active'>{category.name}</NavLink>
+              ))}
             </nav>
           </div>
         </div>
@@ -64,6 +54,7 @@ class MenuBar extends React.Component {
 }
 MenuBar.propTypes = {
   children: PropTypes.node,
+  navCategories: PropTypes.array,
 };
 
 export default MenuBar;
