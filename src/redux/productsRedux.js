@@ -25,6 +25,10 @@ export const getProductById = ({ products }, productId) => {
   return filtered.length ? filtered[0] : { error: true };
 };
 
+export const getProductsByCategory = ({ products }, categoryId) =>
+  categoryId ? products.filter(item => item.category === categoryId) : products;
+
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
