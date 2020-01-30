@@ -20,8 +20,7 @@ export class Gallery extends React.Component {
   }
 
   handleGalleryChange(newGallery) {
-    setTimeout(() => this.setState({ activeGalleries: newGallery }), 1100);
-    console.log('newGallery', newGallery);
+    this.setState({ activeGalleries: newGallery });
   }
 
   render() {
@@ -29,8 +28,6 @@ export class Gallery extends React.Component {
     const { activeGalleries } = this.state;
     const initialProduct = [featured[0]];
     const price = initialProduct.map(standardPrice => standardPrice.price);
-    const discount = initialProduct.map(price => price.promo.discount);
-    const newPrice = price - discount;
     const title = initialProduct.map(title => title.name);
     const initialStars = initialProduct.map(star => star.stars);
     const picture = initialProduct.map(picture => picture.photo);
@@ -42,7 +39,7 @@ export class Gallery extends React.Component {
             <div className={'col-6'}>
               <div className={styles.boxLeft}>
                 <img
-                  src={ activeGalleries[0].photo }
+                  src={ activeGalleries[1].photo }
                   className={'img-fluid'}
                   alt={''}
                 />
@@ -110,8 +107,10 @@ export class Gallery extends React.Component {
                 </ul>
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
-                    <span className={styles.promoPrice}>{'$ ' + newPrice +'.00'}</span>
-                    <span className={styles.standardPrice}>{'$ ' + price + '.00'}</span>
+                    <span className={styles.promoPrice}>
+                    $ {activeGalleries[1].promo ? Math.round(price - activeGalleries[1].promo.discount) : price}
+                    </span>
+                    {activeGalleries[1].promo && <span className={styles.standardPrice}>$ { price }.00</span>}
                   </div>
                   <div className={styles.rate}>
                     <h5>{title}</h5>
@@ -165,6 +164,7 @@ Gallery.propTypes = {
   saleOff: PropTypes.array,
   product: PropTypes.array,
   galeries: PropTypes.array,
+  promo: PropTypes.array,
 };
 
 Gallery.defaultProps = {

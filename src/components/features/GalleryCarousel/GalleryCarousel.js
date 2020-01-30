@@ -13,13 +13,12 @@ class GalleryCarousel extends React.Component {
     activeProduct: 0,
   }
 
-  slidesNumber () {
-    this.setState({ isUnmounted: true });
+  activeIndex(index) {
+    this.setState({activeProduct: index});
   }
 
-
   render () {
-    const {activeGallery} = this.props;
+    const { activeGallery } = this.props;
     const { activeProduct } = this.state;
     const tumbnailsItems = 6;
 
@@ -30,7 +29,7 @@ class GalleryCarousel extends React.Component {
             <div className='row'>
               <div className={'col-1' + styles.btn}>
                 <div className={styles.arrowLeft}>
-                  <button><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
+                  <button onClick={() => activeGallery.slice(activeProduct, activeProduct + tumbnailsItems)}><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
                 </div>
               </div>
 
@@ -38,9 +37,11 @@ class GalleryCarousel extends React.Component {
                 .slice(activeProduct, activeProduct + tumbnailsItems)
                 .map(item => (
                   <div key={item.id} className={'col'}>
-                    <div className={styles.tumbnail}>
-                      <a href={'#'}>
-                        <img src={item.photo} alt={'alttext'} />
+                    <div className={styles.tumbnail}
+                      onClick={() => this.activeIndex(activeProduct.indexOf(item))}
+                    >
+                      <a>
+                        <img src={item.photo} alt={'alttext'}/>
                       </a>
                     </div>
                   </div>
