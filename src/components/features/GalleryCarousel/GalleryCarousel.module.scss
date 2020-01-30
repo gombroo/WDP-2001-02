@@ -1,0 +1,34 @@
+@import "../../../styles/settings.scss";
+
+.root {
+
+  background-color: transparent;
+
+  .carousel {
+    position: relative;
+  }
+
+  button {
+    width: 30px;
+    height: 60px;
+    background-color: $color-black;
+    border: none;
+
+    svg {
+      color: $color-white;
+    }
+  }
+
+    .tumbnail {
+
+    .btn {
+      padding: 0;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+  }
+}

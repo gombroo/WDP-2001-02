@@ -8,19 +8,19 @@ import { Link } from 'react-router-dom';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
-    isUnmounted: false,
-  };
+    state = {
+      activePage: 0,
+      activeCategory: 'bed',
+      isUnmounted: false,
+    };
 
-  unmountTrue() {
-    this.setState({ isUnmounted: true });
-  }
+    unmountTrue() {
+      this.setState({ isUnmounted: true });
+    }
 
-  unmountFalse() {
-    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
-  }
+    unmountFalse() {
+      setTimeout(() => this.setState({ isUnmounted: false }), 1000);
+    }
 
   handlePageChange = newPage => {
     this.unmountTrue();
@@ -39,6 +39,14 @@ class NewFurniture extends React.Component {
     const { categories, products, toggleCompare, viewport } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    if (viewport.mode === 'desktop') {
+      pageItems = 8;
+    } else if (viewport.mode === 'tablet') {
+      pageItems = 4;
+    } else {
+      pageItems = 1;
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / pageItems);
 
@@ -48,21 +56,13 @@ class NewFurniture extends React.Component {
       toggleCompare(id);
     };
 
-    if (viewport.mode === 'desktop') {
-      pageItems = 8;
-    } else if (viewport.mode === 'tablet') {
-      pageItems = 4;
-    } else {
-      pageItems = 1;
-    }
-
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -83,7 +83,9 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory ? styles.active : undefined}
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
