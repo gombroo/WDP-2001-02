@@ -17,6 +17,7 @@ export class Gallery extends React.Component {
 
   state = {
     activeGalleries: this.props.featured,
+    activeIndex: 1,
   }
 
   handleGalleryChange(newGallery) {
@@ -25,7 +26,7 @@ export class Gallery extends React.Component {
 
   render() {
     const { featured, topRated, topSeller, saleOff, galeries } = this.props;
-    const { activeGalleries } = this.state;
+    const { activeGalleries, activeIndex } = this.state;
 
     return (
       <div className={styles.root}>
@@ -34,7 +35,7 @@ export class Gallery extends React.Component {
             <div className={'col-6'}>
               <div className={styles.boxLeft}>
                 <img
-                  src={ activeGalleries[1].photo }
+                  src={ activeGalleries[activeIndex].photo }
                   className={'img-fluid'}
                   alt={''}
                 />
@@ -103,16 +104,16 @@ export class Gallery extends React.Component {
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
                     <span className={styles.promoPrice}>
-                    $ {activeGalleries[1].promo ? Math.round(activeGalleries[1].price - activeGalleries[1].promo.discount) : activeGalleries[1].price}
+                    $ {activeGalleries[activeIndex].promo ? Math.round(activeGalleries[activeIndex].price - activeGalleries[activeIndex].promo.discount) : activeGalleries[activeIndex].price}
                     </span>
-                    {activeGalleries[1].promo && <span className={styles.standardPrice}>$ { activeGalleries[1].price }.00</span>}
+                    {activeGalleries[activeIndex].promo && <span className={styles.standardPrice}>$ { activeGalleries[activeIndex].price }.00</span>}
                   </div>
                   <div className={styles.rate}>
-                    <h5>{activeGalleries[1].name}</h5>
+                    <h5>{activeGalleries[activeIndex].name}</h5>
                     <div className={styles.stars}>
                       {[1, 2, 3, 4, 5].map(i => (
                         <a key={i} href='#'>
-                          {i <= activeGalleries[1].stars ? (
+                          {i <= activeGalleries[activeIndex].stars ? (
                             <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                           ) : (
                             <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
