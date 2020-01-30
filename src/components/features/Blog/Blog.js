@@ -22,7 +22,7 @@ class Blog extends React.Component {
     const dots = [];
     for (let i = 0; i < 3; i++) {
       dots.push(
-        <li number={i}>
+        <li key={i}>
           <a
             onClick={() => this.handleBlogPageChange(i)}
             className={i === activePage ? styles.active : undefined}
@@ -47,18 +47,15 @@ class Blog extends React.Component {
                 </div>
               </div>
             </div>
-
             <Swipeable>
               <div className='row'>
                 <div className='container'>
-                  <div className='d-flex flex-column flex-md-row'>
-                    {/*<img src={posts[activePage].image} alt={posts[activePage].title}></img>*/}
-                    image
-                    <h5>{posts[activePage].title}</h5>
-                    <p>{posts[activePage].comments}</p>
-                    <p>{posts[activePage].date}</p>
-                    <p>{posts[activePage].text}</p>
-                    <BlogPost />
+                  <div className=''>
+                    {posts.length ? (
+                      posts.map(post => <BlogPost key={post.id} {...post} />)
+                    ) : (
+                      <p>Sorry, no results found.</p>
+                    )}
                   </div>
                 </div>
               </div>

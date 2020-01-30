@@ -8,9 +8,11 @@
     .top {
       .thumb {
         height: 230px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        background: {
+          repeat: no-repeat;
+          size: cover;
+          position: center;
+        }
         background-image: url('https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
       }
 
