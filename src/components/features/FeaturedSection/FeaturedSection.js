@@ -9,11 +9,41 @@ import styles from './FeaturedSection.module.scss';
 class FeaturedSection extends Component {
   state = {
     activeProduct: 0,
+    isUnmounted: false,
+  };
+
+  unmountTrue() {
+    this.setState({ isUnmounted: true });
+  }
+
+  unmountFalse() {
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
+  }
+
+  handlePageChange = newProduct => {
+    this.unmountTrue();
+    setTimeout(() => this.setState({ activeProduct: newProduct }), 1100);
+    this.unmountFalse();
   };
 
   render() {
     const { hotDeals } = this.props;
     const { activeProduct } = this.state;
+
+    const productsCount = hotDeals.length;
+
+    const dots = [];
+    for (let i = 0; i < productsCount; i++) {
+      dots.push(
+        <li key={i}>
+          <a
+            onClick={() => this.handlePageChange(i)}
+            className={i === activeProduct ? styles.active : undefined}
+          >
+          </a>
+        </li>
+      );
+    }
 
     return (
       <div className='container'>
@@ -24,17 +54,7 @@ class FeaturedSection extends Component {
                 Hot deals
                 <div className={styles.dots}>
                   <ul>
-                    <li>
-                      <a href='#'> </a>
-                    </li>
-                    <li>
-                      <a href='#' className={styles.active}>
-                        {' '}
-                      </a>
-                    </li>
-                    <li>
-                      <a href='#'> </a>
-                    </li>
+                    {dots}
                   </ul>
                 </div>
               </div>
@@ -42,7 +62,9 @@ class FeaturedSection extends Component {
                 .slice(activeProduct * 1, (activeProduct + 1) * 1)
                 .map(item => (
                   <FeaturedBox
-                    key={item.id} {...item}
+                    key={item.id}
+                    isUnmounted={this.state.isUnmounted}
+                    {...item}
                   />
                 ))}
             </div>

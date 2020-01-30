@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,10 +14,17 @@ import Button from '../Button/Button';
 
 import styles from './FeaturedBox.module.scss';
 
-const FeaturedBox = ({ name, price }) => {
+const FeaturedBox = ({ name, price, isUnmounted }) => {
+  useEffect(() => {
+    document.querySelectorAll('#fadeFeatured').forEach(item => {
+      !isUnmounted
+        ? item.classList.add(styles.fadeIn)
+        : item.classList.add(styles.fadeOut);
+    });
+  }, [isUnmounted]);
 
   return (
-    <div>
+    <div id='fadeFeatured' className={styles.root}>
       <div className={styles.photo}>
         <img
           src='https://images.pexels.com/photos/3316925/pexels-photo-3316925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
@@ -91,6 +98,7 @@ const FeaturedBox = ({ name, price }) => {
 FeaturedBox.propTypes = {
   name: PropTypes.string,
   price: PropTypes.string,
+  isUnmounted: PropTypes.bool,
 };
 
 export default FeaturedBox;

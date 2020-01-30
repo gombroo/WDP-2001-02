@@ -1,5 +1,9 @@
 @import "../../../styles/settings.scss";
 
+.root {
+  opacity: 0;
+}
+
 .photo {
   position: relative;
   overflow: hidden;
@@ -121,4 +125,14 @@ img {
     background-color: $dark-border-color;
     top:45%;
   }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+  opacity: 0;
 }

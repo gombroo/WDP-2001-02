@@ -97,3 +97,23 @@ $shake-duration-time: 1s;
 %hover-no-shake-transition {
   transition:  color $txt-transition-time, background $bg-transition-time;
 }
+
+//fade animations
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

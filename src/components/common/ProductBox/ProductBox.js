@@ -24,7 +24,7 @@ const ProductBox = ({
   comparedItems,
 }) => {
   useEffect(() => {
-    document.querySelectorAll('#fade').forEach(item => {
+    document.querySelectorAll('#fadeProductBox').forEach(item => {
       !isUnmounted
         ? item.classList.add(styles.fadeIn)
         : item.classList.add(styles.fadeOut);
@@ -48,7 +48,7 @@ const ProductBox = ({
   };
 
   return (
-    <div className={styles.root} id='fade'>
+    <div className={styles.root} id='fadeProductBox'>
       <div className={styles.photo}>
         <img src={photo} alt='' />
         {promo && <div className={styles.sale}>{promo.name}</div>}
