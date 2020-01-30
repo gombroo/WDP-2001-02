@@ -11,44 +11,75 @@ class Blog extends React.Component {
     activePage: 0,
   };
 
+  handleBlogPageChange = newPage => {
+    this.setState({ activePage: newPage });
+  };
+
   render() {
+    const { activePage } = this.state;
+    const { posts } = this.props;
+
+    const dots = [];
+    for (let i = 0; i < 3; i++) {
+      dots.push(
+        <li number={i}>
+          <a
+            onClick={() => this.handleBlogPageChange(i)}
+            className={i === activePage ? styles.active : undefined}
+          >
+            page {i}
+          </a>
+        </li>
+      );
+    }
+
     return (
       <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>Latest Blog</h3>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>...</ul>
-              </div>
-            </div>
-          </div>
-
-          <Swipeable>
-            <div className='row'>
-              <div className='container'>
-                <div className='d-flex flex-column flex-md-row'>
-                  <BlogPost />
-                  <BlogPost />
-                  <BlogPost />
+        {posts[0] && (
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>Latest Blog</h3>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
                 </div>
               </div>
             </div>
-          </Swipeable>
 
-        </div>
+            <Swipeable>
+              <div className='row'>
+                <div className='container'>
+                  <div className='d-flex flex-column flex-md-row'>
+                    {/*<img src={posts[activePage].image} alt={posts[activePage].title}></img>*/}
+                    image
+                    <h5>{posts[activePage].title}</h5>
+                    <p>{posts[activePage].comments}</p>
+                    <p>{posts[activePage].date}</p>
+                    <p>{posts[activePage].text}</p>
+                    <BlogPost />
+                  </div>
+                </div>
+              </div>
+            </Swipeable>
+          </div>
+        )}
       </div>
     );
   }
 }
 
 Blog.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  image: PropTypes.node,
-  discount: PropTypes.string,
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      date: PropTypes.number,
+      image: PropTypes.string,
+      comments: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
 };
 
 export default Blog;

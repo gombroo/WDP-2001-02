@@ -14,19 +14,22 @@ const BlogPost = ({ title, image, text, comments, date }) => {
         <div className='row'>
           <div className={styles.single}>
             <div className={styles.top}>
-              <div className={styles.thumb}>
-                {image}
-              </div>
+              <div className={styles.thumb}>{image}</div>
               <div className={styles.meta}>
                 <div className={styles.date}>
-                  <FontAwesomeIcon icon={faCalendarAlt} className={styles.icon}></FontAwesomeIcon>{' '}
+                  <FontAwesomeIcon
+                    icon={faCalendarAlt}
+                    className={styles.icon}
+                  ></FontAwesomeIcon>{' '}
                   02.12.2019
                   {date}
                 </div>
                 <div className={styles.comments}>
-                  <FontAwesomeIcon icon={faComments} className={styles.icon}></FontAwesomeIcon>{' '}
-                  {comments}
-                  4 comments
+                  <FontAwesomeIcon
+                    icon={faComments}
+                    className={styles.icon}
+                  ></FontAwesomeIcon>{' '}
+                  {comments}4 comments
                 </div>
               </div>
             </div>
@@ -40,15 +43,17 @@ const BlogPost = ({ title, image, text, comments, date }) => {
               </h5>
             </div>
             <div className={styles.text}>
-              <p>{text}
-              React is all about components - basically custom HTML elements - with which you can quickly build amazing and powerful web apps. Just build a component once,
-              configure it to your needs.
+              <p>
+                {text}
+                React is all about components - basically custom HTML elements - with
+                which you can quickly build amazing and powerful web apps. Just build a
+                component once, configure it to your needs.
               </p>
             </div>
-            <Button variant='main' className={styles.readmore}>Read more</Button>
-
+            <Button variant='main' className={styles.readmore}>
+              Read more
+            </Button>
           </div>
-
         </div>
       </div>
     </div>
@@ -56,13 +61,11 @@ const BlogPost = ({ title, image, text, comments, date }) => {
 };
 
 BlogPost.propTypes = {
-  post: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.number,
   text: PropTypes.string,
   date: PropTypes.string,
   comments: PropTypes.string,
 };
-
 
 export default BlogPost;
