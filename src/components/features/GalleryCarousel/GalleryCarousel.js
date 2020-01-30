@@ -16,6 +16,7 @@ class GalleryCarousel extends React.Component {
 
   changeIndex(index) {
     this.setState({activeIndex: index});
+    this.sendData(index);
   }
 
   changeGallery(activeProduct, totalItems) {
@@ -27,6 +28,10 @@ class GalleryCarousel extends React.Component {
       this.setState({activeProduct});
     }
     else this.setState({activeProduct: 0});
+  }
+
+  sendData(index) {
+    this.props.parentCallBack(index);
   }
 
   render () {
@@ -75,5 +80,6 @@ class GalleryCarousel extends React.Component {
 GalleryCarousel.propTypes = {
   activeGallery: PropTypes.array,
   topSeller: PropTypes.array,
+  parentCallBack: PropTypes.func,
 };
 export default GalleryCarousel;

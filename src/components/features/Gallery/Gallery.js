@@ -17,15 +17,18 @@ export class Gallery extends React.Component {
 
   state = {
     activeGalleries: this.props.featured,
-    activeIndex: 1,
+    activeIndex: 0,
   }
+
+  callBackFunction = (childData) =>
+    this.setState({activeIndex: childData})
 
   handleGalleryChange(newGallery) {
     this.setState({ activeGalleries: newGallery });
   }
 
   render() {
-    const { featured, topRated, topSeller, saleOff, galeries } = this.props;
+    const {  galeries } = this.props;
     const { activeGalleries, activeIndex } = this.state;
 
     return (
@@ -104,7 +107,7 @@ export class Gallery extends React.Component {
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
                     <span className={styles.promoPrice}>
-                    $ {activeGalleries[activeIndex].promo ? Math.round(activeGalleries[activeIndex].price - activeGalleries[activeIndex].promo.discount) : activeGalleries[activeIndex].price}
+                    $ {activeGalleries[activeIndex].promo ? Math.round(activeGalleries[activeIndex].price - activeGalleries[activeIndex].promo.discount) : activeGalleries[activeIndex].price}.00
                     </span>
                     {activeGalleries[activeIndex].promo && <span className={styles.standardPrice}>$ { activeGalleries[activeIndex].price }.00</span>}
                   </div>
@@ -124,7 +127,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ activeGalleries }/>
+                  <GalleryCarousel activeGallery={ activeGalleries } parentCallBack={this.callBackFunction}/>
                 </div>
               </div>
             </div>
