@@ -4,6 +4,9 @@ import styles from './ProductList.module.scss';
 
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThLarge, faThList } from '@fortawesome/free-solid-svg-icons';
+
 const ProductList = ({ products, match: { params: { categoryId } } }) => (
   <div className={styles.root}>
     <div className='container'>
@@ -11,22 +14,22 @@ const ProductList = ({ products, match: { params: { categoryId } } }) => (
       <div className='row'>
         <div className='col-12 col-md-9'>
 
-          <div className='row'>
-            <div className={'col ' + styles.category}>
-              {categoryId}
+          <div className={'row no-gutters align-items-center justify-content-between ' + styles.heading}>
+            <div className={'col-auto ' + styles.category}>
+              {categoryId ? categoryId : 'furniture'}
             </div>
-            <div className={'col'}>
+            <div className={'col-auto ' + styles.sort}>
               <form>
                 <label htmlFor="sorting">Sort By</label>
                 <select id="sorting">
                   <option value="lowestPrice">Price: Low to High</option>
                   <option value="highestPrice">Price: High to Low</option>
                   <option value="review">Avg. Customer Review</option>
-                  <option value="default">Default order</option>
+                  <option value="default" selected >Default order</option>
                 </select>
               </form>
             </div>
-            <div className={'col'}>
+            <div className={'col-auto ' + styles.show}>
               <form>
                 <label htmlFor="show">Show</label>
                 <select id="show">
@@ -36,10 +39,16 @@ const ProductList = ({ products, match: { params: { categoryId } } }) => (
                 </select>
               </form>
             </div>
-            <div className={'col-1'}>
+            <div className={'col-auto ' + styles.displayType}>
               <form>
-                <input type="radio" id="productsGrid" name="view-option" className={styles.radioGrid} checked />
-                <input type="radio" id="productsList" name="view-option" className={styles.radioList} />
+                <label className={styles.radioGrid}>
+                  <input type="radio" id="productsGrid" name="view-option" checked />
+                  <FontAwesomeIcon icon={faThLarge} className=' fa'></FontAwesomeIcon>
+                </label>
+                <label>
+                  <input type="radio" id="productsList" name="view-option" className={styles.radioList} />
+                  <FontAwesomeIcon icon={faThList} className='fa '></FontAwesomeIcon>
+                </label>
               </form>
             </div>
           </div>
