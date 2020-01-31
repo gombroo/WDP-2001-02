@@ -18,18 +18,20 @@ export class Gallery extends React.Component {
   state = {
     activeGalleries: this.props.featured,
     activeIndex: 0,
+    activeGalleryName: 'featured',
   }
 
   callBackFunction = (childData) =>
-    this.setState({activeIndex: childData})
+    this.setState({activeIndex: childData});
 
-  handleGalleryChange(newGallery) {
+  handleGalleryChange(newGallery, galleryId) {
     this.setState({ activeGalleries: newGallery });
+    this.setState({ activeGalleryName: galleryId });
   }
 
   render() {
     const {  galeries } = this.props;
-    const { activeGalleries, activeIndex } = this.state;
+    const { activeGalleries, activeIndex, activeGalleryName } = this.state;
 
     return (
       <div className={styles.root}>
@@ -50,7 +52,8 @@ export class Gallery extends React.Component {
                     {galeries.map(item => (
                       <li key={item.id}>
                         <a
-                          onClick={() => this.handleGalleryChange(this.props[item.id])}
+                          onClick={() => this.handleGalleryChange(this.props[item.id], item.id)}
+                          className={item.id === activeGalleryName ? styles.active : undefined}
                         >
                           {item.name}
                         </a>

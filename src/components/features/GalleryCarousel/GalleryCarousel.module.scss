@@ -29,6 +29,11 @@
       width: 60px;
       height: 60px;
       object-fit: cover;
+      opacity: 0.5;
+
+      &.active {
+        opacity: 1;
+      }
     }
   }
 }

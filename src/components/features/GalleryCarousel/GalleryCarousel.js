@@ -36,7 +36,7 @@ class GalleryCarousel extends React.Component {
 
   render () {
     const { activeGallery } = this.props;
-    const { activeProduct } = this.state;
+    const { activeProduct, activeIndex } = this.state;
     const tumbnailsItems = 6;
 
     return (
@@ -58,7 +58,8 @@ class GalleryCarousel extends React.Component {
                   >
                     <div className={styles.tumbnail}>
                       <a>
-                        <img src={item.photo} alt={'alttext'}/>
+                        <img className={activeIndex === activeGallery.indexOf(item) ? styles.active : undefined}
+                          src={item.photo} alt={'alttext'} />
                       </a>
                     </div>
                   </div>

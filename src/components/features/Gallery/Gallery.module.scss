@@ -75,13 +75,13 @@
 
       a {
 
-      .active {
-        border-top: 4px solid $primary;
-      }}
+        &.active {
+          border-top: 4px solid $primary;
+        }
 
-      &:hover {
-        border-top: 4px solid $primary;
-
+        &:hover {
+          border-top: 4px solid $primary;
+        }
       }
     }
   }
