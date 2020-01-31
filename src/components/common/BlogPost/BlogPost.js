@@ -10,7 +10,7 @@ import { faComments, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 const BlogPost = ({ title, image, text, comments, date }) => {
   return (
     <div className={styles.root}>
-      <div className={'col-xs-12 col-md-6 col-lg-4 ' + styles.single}>
+      <div className={styles.single}>
         <div className={styles.photo}>
           <img src={image} alt={title} />
         </div>

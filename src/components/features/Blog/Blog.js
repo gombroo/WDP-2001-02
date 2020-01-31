@@ -51,7 +51,11 @@ class Blog extends React.Component {
               <div className='row'>
                 <div className='d-flex flex-wrap'>
                   {posts.length ? (
-                    posts.map(post => <BlogPost key={post.id} {...post} />)
+                    posts.map(post => (
+                      <div key={post.id} className='col-xs-12 col-md-6 col-lg-4 '>
+                        <BlogPost  {...post} />
+                      </div>
+                    ))
                   ) : (
                     <p>Sorry, no results found.</p>
                   )}
