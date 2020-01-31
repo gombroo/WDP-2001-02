@@ -5,27 +5,28 @@
     padding: 0 1rem;
     margin-bottom: 3rem;
 
-    .top {
-      .thumb {
-        height: 230px;
-        background: {
-          repeat: no-repeat;
-          size: cover;
-          position: center;
+      .photo {
+        img {
+          position: relative;
+          width: 100%;
+          background: {
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+          }
         }
-        background-image: url('https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
       }
 
       .meta {
         display: flex;
         background-color: $color-white;
-        padding: 1rem;
+        padding: 0.5rem;
         justify-content: space-around;
         font-size: 0.8rem;
         margin: 0 20px;
-        transform: translateY(-50px);
+        transform: translateY(-35px);
       }
-    }
+
 
     .text {
       padding-bottom: 1rem;
@@ -40,10 +41,14 @@
 
 @media (max-width: 400px) {
   .root {
+    .single {
+      flex-direction: column;
+
     .meta {
       padding: 5px 15px!important;
       flex-direction: column;
       transform: translateY(-53px)!important;
     }
+  }
   }
 }

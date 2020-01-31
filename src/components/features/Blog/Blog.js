@@ -49,14 +49,12 @@ class Blog extends React.Component {
             </div>
             <Swipeable>
               <div className='row'>
-                <div className='container'>
-                  <div className=''>
-                    {posts.length ? (
-                      posts.map(post => <BlogPost key={post.id} {...post} />)
-                    ) : (
-                      <p>Sorry, no results found.</p>
-                    )}
-                  </div>
+                <div className='d-flex flex-wrap'>
+                  {posts.length ? (
+                    posts.map(post => <BlogPost key={post.id} {...post} />)
+                  ) : (
+                    <p>Sorry, no results found.</p>
+                  )}
                 </div>
               </div>
             </Swipeable>
