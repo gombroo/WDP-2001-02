@@ -5,6 +5,7 @@ import FeaturedCarousel from '../../common/FeaturedCarousel/FeaturedCarousel';
 import FeaturedBox from '../../common/FeaturedBox/FeaturedBox';
 
 import styles from './FeaturedSection.module.scss';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class FeaturedSection extends Component {
   state = {
@@ -49,26 +50,33 @@ class FeaturedSection extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col-4'>
-            <div className={styles.root}>
-              <div className={styles.header}>
-                Hot deals
-                <div className={styles.dots}>
-                  <ul>
-                    {dots}
-                  </ul>
+            <Swipeable
+              itemsCount={productsCount}
+              activeItem={this.state.activeProduct}
+              swipeAction={this.handlePageChange}
+            >
+              <div className={styles.root}>
+                <div className={styles.header}>
+                  Hot deals
+                  <div className={styles.dots}>
+                    <ul>
+                      {dots}
+                    </ul>
+                  </div>
                 </div>
+                {hotDeals
+                  .slice(activeProduct * 1, (activeProduct + 1) * 1)
+                  .map(item => (
+                    <FeaturedBox
+                      key={item.id}
+                      isUnmounted={this.state.isUnmounted}
+                      {...item}
+                    />
+                  ))}
               </div>
-              {hotDeals
-                .slice(activeProduct * 1, (activeProduct + 1) * 1)
-                .map(item => (
-                  <FeaturedBox
-                    key={item.id}
-                    isUnmounted={this.state.isUnmounted}
-                    {...item}
-                  />
-                ))}
-            </div>
+            </Swipeable>
           </div>
+
 
           <div className='col-8'>
             <FeaturedCarousel />
