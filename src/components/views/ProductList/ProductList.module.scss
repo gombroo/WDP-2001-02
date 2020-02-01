@@ -37,8 +37,16 @@
       }
 
       .displayType {
+        border: 1px solid rgb(169,169,169);
+        height: 33px;
+        margin-top: -2px;
+
+        form {
+          padding-top: 4px;
+        }
+
         .radioGrid {
-          position: relative;
+          margin: auto 8px;
 
           > input {
             display: none;
@@ -46,7 +54,11 @@
         }
 
         .radioList {
-          display: none;
+          margin: auto 8px;
+
+          > input {
+            display: none;
+          }
 
         }
       }

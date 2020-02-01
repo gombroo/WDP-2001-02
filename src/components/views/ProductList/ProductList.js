@@ -25,7 +25,7 @@ const ProductList = ({ products, match: { params: { categoryId } } }) => (
                   <option value="lowestPrice">Price: Low to High</option>
                   <option value="highestPrice">Price: High to Low</option>
                   <option value="review">Avg. Customer Review</option>
-                  <option value="default" selected >Default order</option>
+                  <option value="default" >Default order</option>
                 </select>
               </form>
             </div>
@@ -42,11 +42,11 @@ const ProductList = ({ products, match: { params: { categoryId } } }) => (
             <div className={'col-auto ' + styles.displayType}>
               <form>
                 <label className={styles.radioGrid}>
-                  <input type="radio" id="productsGrid" name="view-option" checked />
+                  <input type="radio" id="productsGrid" name="view-option" readOnly />
                   <FontAwesomeIcon icon={faThLarge} className=' fa'></FontAwesomeIcon>
                 </label>
-                <label>
-                  <input type="radio" id="productsList" name="view-option" className={styles.radioList} />
+                <label className={styles.radioList}>
+                  <input type="radio" id="productsList" name="view-option" readOnly />
                   <FontAwesomeIcon icon={faThList} className='fa '></FontAwesomeIcon>
                 </label>
               </form>
