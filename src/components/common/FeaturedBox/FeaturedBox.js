@@ -10,12 +10,12 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '../Button/Button';
-import StarRating from '../../features/StarRating/StarRating';
+import StarRating from '../../features/StarRating/StarRatingContainer';
 
 import styles from './FeaturedBox.module.scss';
 
 
-const FeaturedBox = ({ name, price, photo, isUnmounted }) => {
+const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, productId }) => {
   useEffect(() => {
     document.querySelectorAll('#fadeFeatured').forEach(item => {
       !isUnmounted
@@ -63,7 +63,7 @@ const FeaturedBox = ({ name, price, photo, isUnmounted }) => {
 
       <div className={styles.content}>
         <h5>{name}</h5>
-        <StarRating />
+        <StarRating productId={id} rating={rating} />
       </div>
 
       <div className={styles.line}></div>
@@ -93,10 +93,13 @@ const FeaturedBox = ({ name, price, photo, isUnmounted }) => {
 };
 
 FeaturedBox.propTypes = {
+  id: PropTypes.string,
+  rating: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   photo: PropTypes.string,
   isUnmounted: PropTypes.bool,
+  productId: PropTypes.string,
 };
 
 export default FeaturedBox;

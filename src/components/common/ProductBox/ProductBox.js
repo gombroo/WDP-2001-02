@@ -96,7 +96,6 @@ ProductBox.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.object,
-  stars: PropTypes.number,
   id: PropTypes.string,
   toggleFavs: PropTypes.func,
   toggleCompare: PropTypes.func,
