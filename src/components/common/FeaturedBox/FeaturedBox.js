@@ -15,7 +15,20 @@ import StarRating from '../../features/StarRating/StarRatingContainer';
 import styles from './FeaturedBox.module.scss';
 
 
-const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, promo }) => {
+const FeaturedBox = ({
+  id,
+  rating,
+  name,
+  price,
+  photo,
+  isUnmounted,
+  promo,
+  favorite,
+  compare,
+  toggleFavs,
+  toggleCompare,
+  comparedItems,
+}) => {
   useEffect(() => {
     document.querySelectorAll('#fadeFeatured').forEach(item => {
       !isUnmounted
@@ -23,6 +36,22 @@ const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, promo }) => 
         : item.classList.add(styles.fadeOut);
     });
   }, [isUnmounted]);
+
+  const handleFavs = (e, id) => {
+    e.preventDefault();
+    toggleFavs(id);
+  };
+
+  const handleCompare = (e, id) => {
+    e.preventDefault();
+    if (comparedItems.length < 4) {
+      toggleCompare(id);
+    } else {
+      if (compare) {
+        toggleCompare(id);
+      }
+    }
+  };
 
   return (
     <div id='fadeFeatured' className={styles.root}>
@@ -73,10 +102,10 @@ const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, promo }) => 
           <Button variant='outline'>
             <FontAwesomeIcon icon={faEye}>Quick View</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' active={compare} onClick={e => handleCompare(e, id)}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -100,6 +129,11 @@ FeaturedBox.propTypes = {
   photo: PropTypes.string,
   isUnmounted: PropTypes.bool,
   promo: PropTypes.object,
+  favorite: PropTypes.bool,
+  compare: PropTypes.bool,
+  comparedItems: PropTypes.array,
+  toggleFavs: PropTypes.func,
+  toggleCompare: PropTypes.func,
 };
 
 export default FeaturedBox;

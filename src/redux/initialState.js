@@ -248,6 +248,8 @@ const initialState = {
       newFurniture: true,
       saleOff: true,
       topSeller: true,
+      compare: true,
+      favorite: true,
       hot: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',

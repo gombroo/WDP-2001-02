@@ -70,6 +70,9 @@ class FeaturedSection extends Component {
                     <FeaturedBox
                       key={item.id}
                       isUnmounted={this.state.isUnmounted}
+                      toggleCompare={this.props.toggleCompare}
+                      toggleFavs={this.props.toggleFavs}
+                      comparedItems={this.props.comparedItems}
                       {...item}
                     />
                   ))}
@@ -89,6 +92,9 @@ class FeaturedSection extends Component {
 
 FeaturedSection.propTypes = {
   hotDeals: PropTypes.array,
+  toggleCompare: PropTypes.func,
+  toggleFavs: PropTypes.func,
+  comparedItems: PropTypes.array,
 };
 
 export default FeaturedSection;

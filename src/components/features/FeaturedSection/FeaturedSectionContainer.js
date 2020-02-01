@@ -1,9 +1,20 @@
 import { connect } from 'react-redux';
 import FeaturedSection from './FeaturedSection';
-import { getHotDeals } from '../../../redux/productsRedux.js';
+import {
+  getHotDeals,
+  toggleFavs,
+  toggleCompare,
+  getCompared,
+} from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
   hotDeals: getHotDeals(state),
+  comparedItems: getCompared(state),
 });
 
-export default connect(mapStateToProps)(FeaturedSection);
+const mapDispatchToProps = dispatch => ({
+  toggleFavs: id => dispatch(toggleFavs(id)),
+  toggleCompare: id => dispatch(toggleCompare(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeaturedSection);
