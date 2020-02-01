@@ -15,7 +15,7 @@ import StarRating from '../../features/StarRating/StarRatingContainer';
 import styles from './FeaturedBox.module.scss';
 
 
-const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, productId }) => {
+const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, promo }) => {
   useEffect(() => {
     document.querySelectorAll('#fadeFeatured').forEach(item => {
       !isUnmounted
@@ -82,7 +82,7 @@ const FeaturedBox = ({ id, rating, name, price, photo, isUnmounted, productId })
         </div>
 
         <div className={styles.price}>
-          <div className={styles.promoPrice}>$ {price + 30}</div>
+          <div className={styles.promoPrice}>$ {promo ? Math.round(price * (1 - promo.discount * 0.01)) : price}</div>
           <Button noHover variant='small'>
             $ {price}
           </Button>
@@ -99,7 +99,7 @@ FeaturedBox.propTypes = {
   price: PropTypes.number,
   photo: PropTypes.string,
   isUnmounted: PropTypes.bool,
-  productId: PropTypes.string,
+  promo: PropTypes.object,
 };
 
 export default FeaturedBox;
