@@ -14,9 +14,19 @@
 
   .menu {
     display: flex;
-    justify-content: center;
-    align-content: center;
     align-self: stretch;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+      }
+    }
 
     a {
       color: $text-color;
@@ -31,16 +41,15 @@
       letter-spacing: 1px;
       @extend%hover-transition;
 
-      &:hover {
+      &:hover,
+      &.active {
         background-color: $primary;
         color: $light-text-color;
         border-color: $primary;
       }
 
-      &:global(.active) {
+      &.active {
         border-color: $text-color;
-        background-color: $primary;
-        color: $light-text-color;
       }
     }
   }

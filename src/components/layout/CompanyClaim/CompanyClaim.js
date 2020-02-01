@@ -9,23 +9,30 @@ import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row d-flex align-items-center justify-content-between py-2 py-md-0'>
-        {/* phone */}
-        <div className={`col-12 col-md order-3 order-md-1 d-block text-center text-md-left ${styles.phoneNumber}`}>
+      <div className='row align-items-center'>
+        {/* phone desktop */}
+        <div className={`col text-left d-none d-md-block ${styles.phoneNumber}`}>
           <p>
             <FontAwesomeIcon className={styles.icon} icon={faMobileAlt} /> 2300 - 3560 -
             222
           </p>
         </div>
 
-        {/* logo */}
-        <div className='col order-1 order-md-2 d-block text-center'>
+        {/* logo desktop */}
+        <div className='col text-center d-none d-md-block'>
           <a href='#'>
             <img src='/images/logo.png' alt='Bazar' />
           </a>
         </div>
 
-        <div className={`col order-2 order-md-3 d-block text-left text-sm-center ${styles.cart}`}>
+        {/* logo mobile */}
+        <div className='col text-left d-block d-md-none'>
+          <a href='#'>
+            <img src='/images/logo.png' alt='Bazar' />
+          </a>
+        </div>
+
+        <div className={`col text-right ${styles.cart}`}>
           <a href='#' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
@@ -33,6 +40,13 @@ const CompanyClaim = () => (
             <div className={styles.cartCounter}>98765</div>
           </a>
 
+          {/* phone mobile */}
+          <div className={`col text-right d-block d-md-none p-0 ${styles.phoneNumber}`}>
+            <p>
+              <FontAwesomeIcon className={styles.icon} icon={faMobileAlt} /> 2300 - 3560
+              - 222
+            </p>
+          </div>
         </div>
       </div>
     </div>

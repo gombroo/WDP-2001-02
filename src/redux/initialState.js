@@ -10,21 +10,11 @@ const initialState = {
     { id: 'dining', name: 'Dining' },
   ],
 
-  navCategories: [
-    { id: 'home', name: 'Home', link: '/' },
-    { id: 'furniture', name: 'Furniture', link: '/shop/all' },
-    { id: 'chair', name: 'Chair', link: '/shop/chair' },
-    { id: 'table', name: 'Table', link: '/shop/table' },
-    { id: 'sofa', name: 'Sofa', link: '/shop/sofa' },
-    { id: 'bedroom', name: 'Bedroom', link: '/shop/bedroom' },
-    { id: 'blog', name: 'Blog', link: '/blog' },
-  ],
-
   galeries: [
-    { id: 'featured', name: 'FEATURED' },
-    { id: 'topSeller', name: 'TOP SELLER' },
-    { id: 'saleOff', name: 'SALE OFF' },
-    { id: 'topRated', name: 'TOP RATED' },
+    {id: 'featured', name: 'FEATURED'},
+    {id: 'topSeller', name: 'TOP SELLER'},
+    {id: 'saleOff', name: 'SALE OFF'},
+    {id: 'topRated', name: 'TOP RATED'},
   ],
 
   promotion: [

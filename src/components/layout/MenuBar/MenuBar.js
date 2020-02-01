@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,7 +20,13 @@ class MenuBar extends React.Component {
   }
 
   render() {
-    const { navCategories } = this.props;
+    let iconType;
+
+    if (this.state.menuOpen) {
+      iconType = faTimes;
+    } else {
+      iconType = faBars;
+    }
 
     return (
       <div className={styles.root}>
@@ -34,18 +39,40 @@ class MenuBar extends React.Component {
               <FontAwesomeIcon
                 onClick={() => this.handleMenuClick()}
                 className={styles.icon}
-                icon={this.state.menuOpen ? faTimes : faBars}
+                icon={iconType}
               />
             </div>
-            <nav
+            <div
               className={
                 styles.menu + ` col-auto ${this.state.menuOpen ? styles.active : ''}`
               }
             >
-              {navCategories.map(category => (
-                <NavLink key={category.id} to={category.link} activeClassName='active'>{category.name}</NavLink>
-              ))}
-            </nav>
+              <ul>
+                <li>
+                  <a href='#' className={styles.active}>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>Furniture</a>
+                </li>
+                <li>
+                  <a href='#'>Chair</a>
+                </li>
+                <li>
+                  <a href='#'>Table</a>
+                </li>
+                <li>
+                  <a href='#'>Sofa</a>
+                </li>
+                <li>
+                  <a href='#'>Bedroom</a>
+                </li>
+                <li>
+                  <a href='#'>Blog</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -54,7 +81,6 @@ class MenuBar extends React.Component {
 }
 MenuBar.propTypes = {
   children: PropTypes.node,
-  navCategories: PropTypes.array,
 };
 
 export default MenuBar;
