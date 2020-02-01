@@ -8,10 +8,23 @@ import styles from './FeaturedSection.module.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class FeaturedSection extends Component {
+
   state = {
     activeProduct: 0,
     isUnmounted: false,
   };
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.handlePageChange(
+      (this.state.activeProduct === this.props.hotDeals.length - 1) ?
+        0 :
+        this.state.activeProduct + 1
+    ), 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   unmountTrue() {
     this.setState({ isUnmounted: true });
@@ -38,7 +51,15 @@ class FeaturedSection extends Component {
       dots.push(
         <li key={i}>
           <a
-            onClick={() => this.handlePageChange(i)}
+            onClick={() => {
+              this.handlePageChange(i);
+              clearInterval(this.interval);
+              setTimeout(() => this.interval = setInterval(() => this.handlePageChange(
+                (this.state.activeProduct === this.props.hotDeals.length - 1) ?
+                  0 :
+                  this.state.activeProduct + 1
+              ), 3000), 7000);
+            }}
             className={i === activeProduct ? styles.active : undefined}
           >
           </a>
