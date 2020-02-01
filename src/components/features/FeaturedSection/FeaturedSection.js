@@ -28,7 +28,7 @@ class FeaturedSection extends Component {
   };
 
   render() {
-    const { hotDeals } = this.props;
+    const { hotDeals, featuredCategories } = this.props;
     const { activeProduct } = this.state;
 
     const productsCount = hotDeals.length;
@@ -82,7 +82,7 @@ class FeaturedSection extends Component {
 
 
           <div className='col-8'>
-            <FeaturedCarousel />
+            <FeaturedCarousel featuredCategories={featuredCategories} />
           </div>
         </div>
       </div>
@@ -95,6 +95,7 @@ FeaturedSection.propTypes = {
   toggleCompare: PropTypes.func,
   toggleFavs: PropTypes.func,
   comparedItems: PropTypes.array,
+  featuredCategories: PropTypes.array,
 };
 
 export default FeaturedSection;

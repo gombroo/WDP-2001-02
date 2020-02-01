@@ -27,6 +27,27 @@ const initialState = {
     { id: 'topRated', name: 'TOP RATED' },
   ],
 
+  featuredCategories: [
+    {
+      title: 'indoor',
+      titleStrong: 'furniture',
+      subtitle: 'save up to 50% of all furniture',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+    {
+      title: 'comfy',
+      titleStrong: 'chairs',
+      subtitle: 'save up to 25% of all chairs',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+    {
+      title: 'big',
+      titleStrong: 'sofas',
+      subtitle: 'save up to 50% of all sofas',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+  ],
+
   promotion: [
     {
       title: 'Guest Room',
