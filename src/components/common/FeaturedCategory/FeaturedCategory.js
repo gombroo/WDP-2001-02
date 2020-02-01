@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './FeaturedCategory.module.scss';
 
-const FeaturedCategory = ({ title, titleStrong, subtitle, photo }) => {
+const FeaturedCategory = ({ title, titleStrong, subtitle, photo, isUnmounted }) => {
+
+  useEffect(() => {
+    document.querySelectorAll('#fadeCategory').forEach(item => {
+      !isUnmounted
+        ? item.classList.add(styles.fadeIn)
+        : item.classList.add(styles.fadeOut);
+    });
+  }, [isUnmounted]);
+
   return (
-    <div className='row'>
+    <div className='row' id='fadeCategory'>
       <div className={styles.photo}>
         <img
           src={photo}
@@ -30,6 +39,7 @@ FeaturedCategory.propTypes = {
   titleStrong: PropTypes.string,
   subtitle: PropTypes.string,
   photo: PropTypes.string,
+  isUnmounted: PropTypes.bool,
 };
 
 export default FeaturedCategory;
