@@ -27,6 +27,27 @@ const initialState = {
     { id: 'topRated', name: 'TOP RATED' },
   ],
 
+  featuredCategories: [
+    {
+      title: 'indoor',
+      titleStrong: 'furniture',
+      subtitle: 'save up to 50% of all furniture',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+    {
+      title: 'comfy',
+      titleStrong: 'chairs',
+      subtitle: 'save up to 25% of all chairs',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+    {
+      title: 'big',
+      titleStrong: 'sofas',
+      subtitle: 'save up to 50% of all sofas',
+      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+  ],
+
   promotion: [
     {
       title: 'Guest Room',
@@ -248,6 +269,9 @@ const initialState = {
       newFurniture: true,
       saleOff: true,
       topSeller: true,
+      compare: true,
+      favorite: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -389,6 +413,7 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -510,6 +535,7 @@ const initialState = {
       stars: 2,
       promo: { name: 'sale', discount: 25 },
       newFurniture: true,
+      hot: true,
       photo:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },

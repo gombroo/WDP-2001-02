@@ -20,6 +20,9 @@ export const getSaleOff = ({ products }) =>
 export const getFeatured = ({ products }) =>
   products.filter(item => item.featured === true);
 
+export const getHotDeals = ({ products }) =>
+  products.filter(item => item.hot === true);
+
 export const getProductById = ({ products }, productId) => {
   const filtered = products.filter(item => item.id === productId);
   return filtered.length ? filtered[0] : { error: true };

@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './Homepage.module.scss';
 
-import FeaturedSection from '../../features/FeaturedSection/FeaturedSection';
+import FeaturedSection from '../../features/FeaturedSection/FeaturedSectionContainer';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
