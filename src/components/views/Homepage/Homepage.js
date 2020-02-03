@@ -19,9 +19,9 @@ const Homepage = () => (
     <Promotion />
     <NewFurniture />
     <Blog />
-    <Brands />
     <Gallery />
     <Feedback />
+    <Brands />
   </div>
 );
 

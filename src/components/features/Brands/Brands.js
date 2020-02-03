@@ -24,7 +24,7 @@ class Brands extends React.Component {
           <Swipeable>
             <div className='container'>
               <div className='row flex-nowrap justify-content-center ml-1 mr-1'>
-                <div className={'col ' + styles.leftArrow}>
+                <div className={styles.leftArrow}>
                   <button>
                     <FontAwesomeIcon icon={faAngleLeft} />
                   </button>
@@ -34,7 +34,7 @@ class Brands extends React.Component {
                     <BrandItem {...brand} />
                   </div>
                 ))}
-                <div className={'col ' + styles.rightArrow}>
+                <div className={styles.rightArrow}>
                   <button>
                     <FontAwesomeIcon icon={faAngleRight} />
                   </button>
