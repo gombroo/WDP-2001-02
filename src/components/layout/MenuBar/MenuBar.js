@@ -43,7 +43,7 @@ class MenuBar extends React.Component {
               }
             >
               {navCategories.map(category => (
-                <NavLink key={category.id} to={category.link} activeClassName='active'>{category.name}</NavLink>
+                <NavLink key={category.id} to={category.link} exact activeClassName='active'>{category.name}</NavLink>
               ))}
             </nav>
           </div>

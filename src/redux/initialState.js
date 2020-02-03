@@ -12,7 +12,7 @@ const initialState = {
 
   navCategories: [
     { id: 'home', name: 'Home', link: '/' },
-    { id: 'furniture', name: 'Furniture', link: '/shop/all' },
+    { id: 'furniture', name: 'Furniture', link: '/shop' },
     { id: 'chair', name: 'Chair', link: '/shop/chair' },
     { id: 'table', name: 'Table', link: '/shop/table' },
     { id: 'sofa', name: 'Sofa', link: '/shop/sofa' },

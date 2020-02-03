@@ -2,4 +2,65 @@
 
 .root {
   padding: $base-padding 0;
+
+  .heading {
+    height: 80px;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+
+      .category {
+        font-size: 22px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .sort {
+        font-size: 14px;
+        font-weight: 400;
+
+        select {
+          color: $gray-text-color;
+          margin-left: 10px;
+          padding: 5px;
+        }
+      }
+
+      .show {
+        font-size: 14px;
+        font-weight: 400;
+
+        select {
+          color: $gray-text-color;
+          margin-left: 10px;
+          padding: 5px;
+        }
+      }
+
+      .displayType {
+        border: 1px solid rgb(169,169,169);
+        height: 33px;
+        margin-top: -2px;
+
+        form {
+          padding-top: 4px;
+        }
+
+        .radioGrid {
+          margin: auto 8px;
+
+          > input {
+            display: none;
+          }
+        }
+
+        .radioList {
+          margin: auto 8px;
+
+          > input {
+            display: none;
+          }
+
+        }
+      }
+  }
 }
