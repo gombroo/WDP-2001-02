@@ -1,0 +1,72 @@
+@import "../../../styles/settings.scss";
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    max-height: 477px;
+  }
+}
+
+.layer {
+  position: absolute;
+  top: 9rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: $color-midGray;
+  width: 100%;
+  height: 44%;
+  opacity: 0.6;
+}
+
+.title {
+  padding-top: 1.3rem;
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  color: $color-white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 200;
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .shopnow {
+    background-color: $color-white;
+    color: $color-black;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    @extend%hover-no-shake-transition;
+
+    &:hover {
+      background-color: $color-orange;
+    }
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+  opacity: 0;
+}

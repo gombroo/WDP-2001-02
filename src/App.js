@@ -8,7 +8,7 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
+import ProductList from './components/views/ProductList/ProductListContainer';
 import ProductPage from './components/views/ProductPage/ProductPage';
 
 const App = () => (
@@ -17,8 +17,10 @@ const App = () => (
       <MainLayout>
         <Switch>
           <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/shop/:categoryId'} component={ProductList} />
+          <Route exact path={'/shop'} component={ProductList} />
+          <Route exact path={'/shop/:categoryId?'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
+          {/*<Route exact path={'/blog'} component={Blog} />*/}
         </Switch>
       </MainLayout>
     </BrowserRouter>

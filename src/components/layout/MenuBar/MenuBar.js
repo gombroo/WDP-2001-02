@@ -1,57 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 
-const MenuBar = ({ children }) => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row align-items-center'>
-        <div className='col '>
-          <ProductSearch />
-        </div>
+class MenuBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false,
+    };
+  }
 
-        <div href='#' className={'col' + styles.hamburger}>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
-        </div>
+  handleMenuClick() {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  }
 
-        <div className={'col-auto ' + styles.menu}>
-          <ul>
-            <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='#'>Furniture</a>
-            </li>
-            <li>
-              <a href='#'>Chair</a>
-            </li>
-            <li>
-              <a href='#'>Table</a>
-            </li>
-            <li>
-              <a href='#'>Sofa</a>
-            </li>
-            <li>
-              <a href='#'>Bedroom</a>
-            </li>
-            <li>
-              <a href='#'>Blog</a>
-            </li>
-          </ul>
+  render() {
+    const { navCategories } = this.props;
+
+    return (
+      <div className={styles.root}>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col'>
+              <ProductSearch />
+            </div>
+            <div className={styles.hamburger}>
+              <FontAwesomeIcon
+                onClick={() => this.handleMenuClick()}
+                className={styles.icon}
+                icon={this.state.menuOpen ? faTimes : faBars}
+              />
+            </div>
+            <nav
+              className={
+                styles.menu + ` col-auto ${this.state.menuOpen ? styles.active : ''}`
+              }
+            >
+              {navCategories.map(category => (
+                <NavLink
+                  key={category.id}
+                  to={category.link}
+                  exact
+                  activeClassName='active'
+                >
+                  {category.name}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
-
+    );
+  }
+}
 MenuBar.propTypes = {
   children: PropTypes.node,
+  navCategories: PropTypes.array,
 };
 
 export default MenuBar;

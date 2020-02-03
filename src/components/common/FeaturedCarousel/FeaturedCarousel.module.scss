@@ -1,0 +1,18 @@
+@import "../../../styles/settings.scss";
+
+.root {
+    padding-top: 1rem;
+    max-height: 32rem;
+  }
+
+.arrow {
+  background-color: $color-black;
+  text-align: center;
+  width: 50%;
+  min-height: 25px;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-orange;
+  }
+}

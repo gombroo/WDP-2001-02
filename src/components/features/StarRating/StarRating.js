@@ -51,14 +51,14 @@ class StarRating extends React.Component {
       let icon;
       let classy;
       if (this.state.rating) {
-        if (this.state.rating > i && this.state.rating != null) {
+        if (this.state.rating > i && this.state.rating !== null) {
           classy = styles.selected;
           icon = faStar;
         } else {
           icon = farStar;
         }
       } else {
-        this.props.stars > i && this.props.stars != null
+        this.props.stars > i && this.props.stars !== null
           ? (icon = faStar)
           : (icon = farStar);
       }

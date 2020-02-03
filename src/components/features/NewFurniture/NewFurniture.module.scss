@@ -72,12 +72,20 @@
       right: 0;
       top: 0;
 
+      @media (max-width: 767px) {
+        position: static;
+      }
+
       ul {
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
         background-color: $light-bg;
         transform: translateY(15px);
+
+        @media (max-width: 767px) {
+          padding: 0;
+        }
 
         li {
           display: inline-block;
@@ -107,7 +115,7 @@
     bottom: 0;
     z-index: 100;
     background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     //width: 100%;
     width: 640px;
     box-sizing: border-box;
@@ -146,7 +154,7 @@
         }
 
         &:hover img {
-          opacity: 0.5
+          opacity: 0.5;
         }
 
         &:hover a {
@@ -188,6 +196,4 @@
       }
     }
   }
-
-
 }

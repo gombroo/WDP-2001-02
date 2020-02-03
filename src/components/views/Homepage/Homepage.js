@@ -3,9 +3,10 @@ import React from 'react';
 
 import styles from './Homepage.module.scss';
 
-import FeaturedSection from '../../features/FeaturedSection/FeaturedSection';
+import FeaturedSection from '../../features/FeaturedSection/FeaturedSectionContainer';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import Gallery from '../../features/Gallery/GalleryContainer';
 import Promotion from '../../features/Promotion/Promotion';
 import Blog from '../../features/Blog/BlogContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
@@ -17,6 +18,7 @@ const Homepage = () => (
     <Promotion />
     <NewFurniture />
     <Blog />
+    <Gallery />
     <Feedback />
   </div>
 );

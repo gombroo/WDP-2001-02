@@ -20,6 +20,8 @@ $color-gray-rgb-169: rgb(169, 169, 169);
 $color-gray-rgb-216: rgb(216, 216, 216);
 $color-gray-rgb-224: rgb(224, 227, 237);
 
+$color-green: #33FF99;
+
 //component color variables
 
 $primary: $color-orange;
@@ -94,4 +96,24 @@ $shake-duration-time: 1s;
 
 %hover-no-shake-transition {
   transition:  color $txt-transition-time, background $bg-transition-time;
+}
+
+//fade animations
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
