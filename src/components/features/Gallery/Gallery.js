@@ -14,10 +14,9 @@ import Button from '../../common/Button/Button';
 import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 
 export class Gallery extends React.Component {
-
   state = {
     activeGalleries: this.props.featured,
-  }
+  };
 
   unmountTrue() {
     this.setState({ isUnmounted: true });
@@ -51,11 +50,7 @@ export class Gallery extends React.Component {
           <div className='row'>
             <div className={'col-6'}>
               <div className={styles.boxLeft}>
-                <img
-                  src={ picture }
-                  className={'img-fluid'}
-                  alt={''}
-                />
+                <img src={picture} className={'img-fluid'} alt={''} />
                 <div className={styles.heading}>
                   <h3>furniture gallery</h3>
                 </div>
@@ -63,9 +58,7 @@ export class Gallery extends React.Component {
                   <ul>
                     {galeries.map(item => (
                       <li key={item.id}>
-                        <a
-                          onClick={() => this.handleGalleryChange(item.id)}
-                        >
+                        <a onClick={() => this.handleGalleryChange(item.id)}>
                           {item.name}
                         </a>
                       </li>
@@ -120,7 +113,7 @@ export class Gallery extends React.Component {
                 </ul>
                 <div className={styles.inbox}>
                   <div className={styles.priceCircle}>
-                    <span className={styles.promoPrice}>{'$ ' + newPrice +'.00'}</span>
+                    <span className={styles.promoPrice}>{'$ ' + newPrice + '.00'}</span>
                     <span className={styles.standardPrice}>{'$ ' + price + '.00'}</span>
                   </div>
                   <div className={styles.rate}>
@@ -139,7 +132,7 @@ export class Gallery extends React.Component {
                   </div>
                 </div>
                 <div className={styles.tumbnail}>
-                  <GalleryCarousel activeGallery={ topRated }/>
+                  <GalleryCarousel activeGallery={topRated} />
                 </div>
               </div>
             </div>

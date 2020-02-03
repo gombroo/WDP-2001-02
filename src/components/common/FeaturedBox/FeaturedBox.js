@@ -14,7 +14,6 @@ import StarRating from '../../features/StarRating/StarRatingContainer';
 
 import styles from './FeaturedBox.module.scss';
 
-
 const FeaturedBox = ({
   id,
   rating,
@@ -56,10 +55,7 @@ const FeaturedBox = ({
   return (
     <div id='fadeFeatured' className={styles.root}>
       <div className={styles.photo}>
-        <img
-          src={photo}
-          alt=''
-        />
+        <img src={photo} alt='' />
         <div className={styles.buttons__hover}>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -105,13 +101,19 @@ const FeaturedBox = ({
           <Button variant='outline' active={favorite} onClick={e => handleFavs(e, id)}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' active={compare} onClick={e => handleCompare(e, id)}>
+          <Button
+            variant='outline'
+            active={compare}
+            onClick={e => handleCompare(e, id)}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
 
         <div className={styles.price}>
-          <div className={styles.promoPrice}>$ {promo ? Math.round(price * (1 - promo.discount * 0.01)) : price}</div>
+          <div className={styles.promoPrice}>
+            $ {promo ? Math.round(price * (1 - promo.discount * 0.01)) : price}
+          </div>
           <Button noHover variant='small'>
             $ {price}
           </Button>

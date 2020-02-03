@@ -6,7 +6,6 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import FeaturedCategory from '../FeaturedCategory/FeaturedCategory';
 
 const FeaturedCarousel = ({ featuredCategories }) => {
-
   const [activeCategory, setCategory] = useState(0);
   const [isUnmounted, unmount] = useState(false);
 
@@ -32,7 +31,6 @@ const FeaturedCarousel = ({ featuredCategories }) => {
 
   return (
     <div className={styles.root}>
-
       {featuredCategories
         .slice(activeCategory * 1, (activeCategory + 1) * 1)
         .map(item => (
@@ -42,18 +40,18 @@ const FeaturedCarousel = ({ featuredCategories }) => {
       <div className='row'>
         <div
           className={styles.arrow}
-          onClick={activeCategory > 0 ?
-            () => handleCategoryChangeDown()
-            :
-            null}>
+          onClick={activeCategory > 0 ? () => handleCategoryChangeDown() : null}
+        >
           <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
         </div>
         <div
           className={styles.arrow}
-          onClick={activeCategory === featuredCategories.length - 1 ?
-            null
-            :
-            () => handleCategoryChangeUp()}>
+          onClick={
+            activeCategory === featuredCategories.length - 1
+              ? null
+              : () => handleCategoryChangeUp()
+          }
+        >
           <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
         </div>
       </div>

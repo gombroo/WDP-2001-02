@@ -11,7 +11,9 @@ const CompanyClaim = () => (
     <div className='container'>
       <div className='row d-flex align-items-center justify-content-between py-2 py-md-0'>
         {/* phone */}
-        <div className={`col-12 col-md order-3 order-md-1 d-block text-center text-md-left ${styles.phoneNumber}`}>
+        <div
+          className={`col-12 col-md order-3 order-md-1 d-block text-center text-md-left ${styles.phoneNumber}`}
+        >
           <p>
             <FontAwesomeIcon className={styles.icon} icon={faMobileAlt} /> 2300 - 3560 -
             222
@@ -25,14 +27,15 @@ const CompanyClaim = () => (
           </a>
         </div>
 
-        <div className={`col order-2 order-md-3 d-block text-left text-sm-center ${styles.cart}`}>
+        <div
+          className={`col order-2 order-md-3 d-block text-left text-sm-center ${styles.cart}`}
+        >
           <a href='#' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
             <div className={styles.cartCounter}>98765</div>
           </a>
-
         </div>
       </div>
     </div>

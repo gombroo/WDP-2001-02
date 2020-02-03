@@ -8,19 +8,19 @@ import { Link } from 'react-router-dom';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
-    state = {
-      activePage: 0,
-      activeCategory: 'bed',
-      isUnmounted: false,
-    };
+  state = {
+    activePage: 0,
+    activeCategory: 'bed',
+    isUnmounted: false,
+  };
 
-    unmountTrue() {
-      this.setState({ isUnmounted: true });
-    }
+  unmountTrue() {
+    this.setState({ isUnmounted: true });
+  }
 
-    unmountFalse() {
-      setTimeout(() => this.setState({ isUnmounted: false }), 1000);
-    }
+  unmountFalse() {
+    setTimeout(() => this.setState({ isUnmounted: false }), 1000);
+  }
 
   handlePageChange = newPage => {
     this.unmountTrue();

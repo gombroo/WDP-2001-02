@@ -9,6 +9,38 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  posts: [
+    {
+      id: 1,
+      title: 'The Best Furniture Ever',
+      date: '20 Nov 2019',
+      comments: '3 comments',
+      image:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      text:
+        'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
+    },
+    {
+      id: 2,
+      title: 'Products That Fight Static',
+      date: '28 Dec 2019',
+      comments: '4 comments',
+      image:
+        'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      text:
+        'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
+    },
+    {
+      id: 3,
+      title: 'Products That Fight Static',
+      date: '12 Nov 2019',
+      comments: '1 comment',
+      image:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      text:
+        'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.',
+    },
+  ],
 
   navCategories: [
     { id: 'home', name: 'Home', link: '/' },
@@ -32,19 +64,22 @@ const initialState = {
       title: 'indoor',
       titleStrong: 'furniture',
       subtitle: 'save up to 50% of all furniture',
-      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      photo:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
     },
     {
       title: 'comfy',
       titleStrong: 'chairs',
       subtitle: 'save up to 25% of all chairs',
-      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      photo:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
     },
     {
       title: 'big',
       titleStrong: 'sofas',
       subtitle: 'save up to 50% of all sofas',
-      photo: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      photo:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
     },
   ],
 

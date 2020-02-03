@@ -8,18 +8,21 @@ import styles from './FeaturedSection.module.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class FeaturedSection extends Component {
-
   state = {
     activeProduct: 0,
     isUnmounted: false,
   };
 
   componentDidMount() {
-    this.interval = setInterval(() => this.handlePageChange(
-      (this.state.activeProduct === this.props.hotDeals.length - 1) ?
-        0 :
-        this.state.activeProduct + 1
-    ), 3000);
+    this.interval = setInterval(
+      () =>
+        this.handlePageChange(
+          this.state.activeProduct === this.props.hotDeals.length - 1
+            ? 0
+            : this.state.activeProduct + 1
+        ),
+      3000
+    );
   }
 
   componentWillUnmount() {
@@ -54,15 +57,22 @@ class FeaturedSection extends Component {
             onClick={() => {
               this.handlePageChange(i);
               clearInterval(this.interval);
-              setTimeout(() => this.interval = setInterval(() => this.handlePageChange(
-                (this.state.activeProduct === this.props.hotDeals.length - 1) ?
-                  0 :
-                  this.state.activeProduct + 1
-              ), 3000), 7000);
+              setTimeout(
+                () =>
+                  (this.interval = setInterval(
+                    () =>
+                      this.handlePageChange(
+                        this.state.activeProduct === this.props.hotDeals.length - 1
+                          ? 0
+                          : this.state.activeProduct + 1
+                      ),
+                    3000
+                  )),
+                7000
+              );
             }}
             className={i === activeProduct ? styles.active : undefined}
-          >
-          </a>
+          ></a>
         </li>
       );
     }
@@ -80,9 +90,7 @@ class FeaturedSection extends Component {
                 <div className={styles.header}>
                   Hot deals
                   <div className={styles.dots}>
-                    <ul>
-                      {dots}
-                    </ul>
+                    <ul>{dots}</ul>
                   </div>
                 </div>
                 {hotDeals
@@ -100,7 +108,6 @@ class FeaturedSection extends Component {
               </div>
             </Swipeable>
           </div>
-
 
           <div className='col-8'>
             <FeaturedCarousel featuredCategories={featuredCategories} />

@@ -6,7 +6,7 @@ import {
   toggleCompare,
   getCompared,
 } from '../../../redux/productsRedux.js';
-import {getAll} from '../../../redux/featuredCategoriesRedux';
+import { getAll } from '../../../redux/featuredCategoriesRedux';
 
 const mapStateToProps = state => ({
   hotDeals: getHotDeals(state),

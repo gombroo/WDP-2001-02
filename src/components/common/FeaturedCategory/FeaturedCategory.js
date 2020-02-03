@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './FeaturedCategory.module.scss';
 
 const FeaturedCategory = ({ title, titleStrong, subtitle, photo, isUnmounted }) => {
-
   useEffect(() => {
     document.querySelectorAll('#fadeCategory').forEach(item => {
       !isUnmounted
@@ -16,10 +15,7 @@ const FeaturedCategory = ({ title, titleStrong, subtitle, photo, isUnmounted }) 
   return (
     <div className='row' id='fadeCategory'>
       <div className={styles.photo}>
-        <img
-          src={photo}
-          alt=''
-        />
+        <img src={photo} alt='' />
         <div className={styles.layer}></div>
         <div className={styles.title}>
           <span>{title}</span>

@@ -20,8 +20,7 @@ export const getSaleOff = ({ products }) =>
 export const getFeatured = ({ products }) =>
   products.filter(item => item.featured === true);
 
-export const getHotDeals = ({ products }) =>
-  products.filter(item => item.hot === true);
+export const getHotDeals = ({ products }) => products.filter(item => item.hot === true);
 
 export const getProductById = ({ products }, productId) => {
   const filtered = products.filter(item => item.id === productId);
@@ -30,7 +29,6 @@ export const getProductById = ({ products }, productId) => {
 
 export const getProductsByCategory = ({ products }, categoryId) =>
   categoryId ? products.filter(item => item.category === categoryId) : products;
-
 
 /* action name creator */
 const reducerName = 'products';

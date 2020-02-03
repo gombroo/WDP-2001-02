@@ -2,24 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './GalleryCarousel.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAngleLeft,
-  faAngleRight,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 class GalleryCarousel extends React.Component {
-
   state = {
     activeProduct: 0,
-  }
+  };
 
-  slidesNumber () {
+  slidesNumber() {
     this.setState({ isUnmounted: true });
   }
 
-
-  render () {
-    const {activeGallery} = this.props;
+  render() {
+    const { activeGallery } = this.props;
     const { activeProduct } = this.state;
     const tumbnailsItems = 6;
 
@@ -30,7 +25,9 @@ class GalleryCarousel extends React.Component {
             <div className='row'>
               <div className={'col-1' + styles.btn}>
                 <div className={styles.arrowLeft}>
-                  <button><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></button>
+                  <button>
+                    <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon>
+                  </button>
                 </div>
               </div>
 
@@ -48,7 +45,9 @@ class GalleryCarousel extends React.Component {
 
               <div className={'col-1' + styles.btn}>
                 <div className={styles.arrowRight}>
-                  <button><FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></button>
+                  <button>
+                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                  </button>
                 </div>
               </div>
             </div>
