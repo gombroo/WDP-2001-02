@@ -9,6 +9,35 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  brands: [
+    {
+      number: 1,
+      image:
+        'https://www.spartacapital.com/wp-content/uploads/2019/04/Sample-Logo-square.png',
+    },
+    {
+      number: 2,
+      image: 'https://static.gazetapowiatowa.pl/2019/10/logo-konkurs-773x515.jpg',
+    },
+    {
+      number: 3,
+      image:
+        'https://www.spartacapital.com/wp-content/uploads/2019/04/Sample-Logo-square.png',
+    },
+    {
+      number: 4,
+      image: 'https://static.gazetapowiatowa.pl/2019/10/logo-konkurs-773x515.jpg',
+    },
+    {
+      number: 5,
+      image:
+        'https://www.spartacapital.com/wp-content/uploads/2019/04/Sample-Logo-square.png',
+    },
+    {
+      number: 6,
+      image: 'https://static.gazetapowiatowa.pl/2019/10/logo-konkurs-773x515.jpg',
+    },
+  ],
   posts: [
     {
       id: 1,

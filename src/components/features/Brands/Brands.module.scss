@@ -1,0 +1,20 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-bottom: 3rem;
+
+  .brandBox {
+    margin: 5px;
+  }
+
+  button {
+    width: 40px;
+    height: 84%;
+    background-color: $color-black;
+    border: none;
+
+    svg {
+      color: $color-white;
+    }
+  }
+}

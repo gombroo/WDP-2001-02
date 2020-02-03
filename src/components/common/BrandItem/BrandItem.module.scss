@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-bottom: 2rem;
+
+  .photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $gray-text-color;
+
+    img {
+      height: 150px;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import Promotion from '../../features/Promotion/Promotion';
 import Blog from '../../features/Blog/BlogContainer';
+import Brands from '../../features/Brands/BrandsContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 
 const Homepage = () => (
@@ -18,6 +19,7 @@ const Homepage = () => (
     <Promotion />
     <NewFurniture />
     <Blog />
+    <Brands />
     <Gallery />
     <Feedback />
   </div>
